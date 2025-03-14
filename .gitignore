@@ -1,0 +1,7 @@
+.parcel-cache/
+dist/
+coverage/
+node_modules/
+.vscode/
+practice-js/
+notesNetworks.txt

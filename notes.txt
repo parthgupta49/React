@@ -1,0 +1,1188 @@
+$ Storage Mediums
+- localStorage:
+    > Use when you need to store large amounts of data that should persist across multiple sessions and are not sensitive (e.g., user preferences, non-sensitive application state).
+    > Purpose: localStorage is designed to store data on the client side that persists even after the browser is closed. It's an excellent choice for data that needs to be retained across multiple sessions.
+    > Capacity: localStorage offers substantial storage space, typically up to 10MB per domain, which is sufficient for most applications.
+    > Persistence: Data stored in localStorage remains available until explicitly deleted by the user or the application. This makes it ideal for storing user preferences, like theme settings, that should persist across different visits to the site.
+    > Example: Suppose you have a web application that offers both light and dark modes. You can use localStorage to save the user's preference so that the next time they visit, the site automatically loads in their chosen mode.
+- sessionStorage:
+    > Ideal for temporary data that should only persist for the duration of the user’s session (e.g., single-session form data, temporary state).
+    > Purpose: sessionStorage also stores data on the client side, but it is limited to the duration of the page session. This means the data is cleared when the user closes the browser tab or window.
+    > Capacity: Similar to localStorage, sessionStorage provides around 5MB of storage per domain. Although the capacity is smaller, it's often sufficient for temporary data.
+    > Persistence: The key difference between sessionStorage and localStorage is persistence. sessionStorage data is only available for the duration of the page session, making it suitable for storing temporary data that doesn't need to persist beyond the current session.
+    > Example: Imagine a multi-step form where users input data across several pages. You can use sessionStorage to temporarily store the form data as the user progresses through the steps. This ensures that if they accidentally reload a page, they don’t lose their progress.
+- Cookies:
+    > Best for storing small pieces of data that need to be sent to the server with HTTP requests or need a specific expiration (e.g., authentication tokens, user preferences that need to interact with the server).
+    > Purpose: Cookies are used to store small pieces of data that need to persist across sessions and can be sent with HTTP requests to the server. They are often used for tracking user sessions, storing authentication tokens, and remembering user settings.
+    > Capacity: Cookies are much smaller in capacity compared to localStorage and sessionStorage, with a limit of 4KB per cookie. However, multiple cookies can be stored, each with this limit.
+    > Persistence: Cookies have a configurable expiration time. They can either expire at the end of a session or persist for a specified duration. This flexibility allows cookies to be used for both short-term and long-term storage.
+    > Example: A common use of cookies is to store a user’s login token, which allows the user to stay logged in across sessions without having to re-enter their credentials every time they visit the site.
+    
+
+
+
+$ ---------------------------------------Pure Functions------------------------------------- 
+-> Some JavaScript functions are pure. Pure functions only perform a calculation and nothing more. 
+- A component must be pure, meaning:
+    -> It minds its own business. It should not change any objects or variables that existed before rendering.
+    -> "Same inputs, same output". Given the same inputs, a component should always return the same JSX.
+
+-> React is designed around this concept. "React assumes that every component you write is a pure function". This means that React components you write must always return the same JSX given the same inputs
+-> "React 's rendering process must always be pure". Components should only return their JSX, and not change any objects or variables that existed before rendering—that would make them impure!
+
+-> React offers a “Strict Mode” in which it calls each component’s function twice during development.
+-> By calling the component functions twice, Strict Mode helps find components that break these rules.
+-> Notice how the original example displayed “Guest #2”, “Guest #4”, and “Guest #6” instead of “Guest #1”, “Guest #2”, and “Guest #3”. The original function was impure, so calling it twice broke it. But the fixed pure version works even if the function is called twice every time.
+-> Pure functions only calculate, so calling them twice won’t change anything—just like calling double(2) twice doesn’t change what’s returned, and solving y = 2x twice doesn’t change what y is. 
+-> "Same inputs, same outputs. Always."
+-> Strict Mode has no effect in "production", so it won’t slow down the app for your users. To opt into Strict Mode, you can wrap your root component into <React.StrictMode>. Some frameworks do this by default.
+
+- The problem was that the component changed a preexisting variable while rendering. This is often called a “mutation” to make it sound a bit scarier. Pure functions don’t mutate variables outside of the function’s scope or objects that were created before the call—that makes them impure!
+- However, it’s completely fine to change variables and objects that you’ve just created while rendering. 
+- This is called “local mutation”—it’s like your component’s little secret.
+
+$ ---------------------------------------Side Effects------------------------------------- 
+- Side effects are things that happen in your program that change something outside of the current function or component. Examples include:
+        -> Updating the screen
+        -> Starting an animation
+        -> Changing data in a database
+        -> Sending a request to a server
+        -> Playing a sound
+These changes happen "on the side" of the normal flow of your program, hence the name "side effects".
+
+Q. Where can you cause side effects in React?
+-> In React, you can cause side effects in two main places:
+-> "Event handlers" : These are functions that run when something happens, like when you click a button. Since they don't run during the normal rendering process, they can cause side effects without affecting the rendering of your component.
+-> "useEffect hook" : This is a special hook in React that allows you to run a function after the component has finished rendering. You can use it to cause side effects, but it should be your last resort.
+
+Q. Why is it important to separate side effects from rendering? 
+-> React wants to keep rendering pure, meaning that it should only depend on the props and state of the component, and not on any external factors. This makes it easier to predict and optimize the rendering process.
+-> By separating side effects from rendering, you ensure that your component's rendering is not affected by external changes, and that your side effects don't interfere with the rendering process.
+
+
+There are 2 types of dependencies our app can have
+1. Normal Dependency
+-> requires in the production phase
+2. Dev Dependency
+-> requires in the development phase
+
+parcel (a bundler)
+Installation 
+npm install -D parcel
+-> this means we need this package particularly for the dev phase
+
+
+package.json
+-> configuration for the npm
+
+# kerat and tilde
+Tilde (~)
+
+Means "same minor version, latest patch"
+Example: ~1.2.3 means "get the latest patch version of 1.2, but don't go to 1.3"
+So, if you use ~1.2.3, you'll get the latest version like 1.2.4, 1.2.5, etc., but not 1.3.0 or higher.
+
+Caret (^)
+
+Means "same major version, latest minor and patch"
+Example: ^1.2.3 means "get the latest minor and patch version of 1, but don't go to 2"
+So, if you use ^1.2.3, you'll get the latest version like 1.3.0, 1.4.0, 1.4.1, etc., but not 2.0.0 or higher.
+
+Think of it like this:
+
+~ is like saying "stay in the same room, but get the latest furniture" (same minor version, latest patch)
+^ is like saying "stay in the same floor, but get the latest room and furniture" (same major version, latest minor and patch)
+
+
+
+
+
+package-lock.json
+-> keeps a track of exact version of that package/dependency
+-> its so huge, maintains the exact version of all the dependency
+there exists something called integrity as well which says the code which i have should have the same thing as in the production
+
+-> both these maintains a note of what all dependencies our project needs
+
+# No need to put the node_modules folder in the GitHub as we have all the dependencies in the package.json and we have the exact version as well in the
+package-lock.json, so by just doing npm i we can regenerate it, so basically no need to put all those stuff over there
+# what all we can re-generate we don't have to put it on GitHub
+
+
+
+
+
+npm - calling the cmd of npm, install a package
+npx - executing a package
+
+npx parcel index.html
+-> executed the parcel (the bundler)
+-> index.html is the source
+-> this will host our app as per our source on our localhost:1234
+
+- parcel
+-> parcel goes to the source and build a development app and host in the localhost at PORT 1234
+-> Dev Build
+-> Local Server
+-> HMR = Hot Module Replacement
+-> File Watching Algorithm - written in C++ 
+    => Keeps an eye in all our files
+    => as soon as we make any change it will build it once again
+-> Caching => Faster Builds
+-> Also do Image Optimisation
+-> Minification
+-> Compressing
+-> Bundling
+-> Content Hashing
+-> Code Splitting
+-> Differential Bundling - support older browsers
+-> Diagnostic 
+-> Error Handling
+-> Also give HTTPs
+-> Tree Shaking - remove unused code for us
+
+> While explaination how the React is fast, can i include bundlers explanation as well like can i say react is fast but there is much more needed to build a production ready application thats where bundlers comes in which combiningly works with react to make the application more fast. i have personally worked with parcel right from its installation, i am thinking of explaining that, i can say its a dev dependency offcourse its combines all the modules/components to a single file and makes our app production ready but it does alot more than that : It does the things like HMR (Hot Module Replacement), Minification, Compressing, Bundling, Code Splitting, Tree Shaking (if some code is unused it just removes it), Error Handling (uses linters), differential bundling (to support older browsers), also do Image Optimisation and alot more so it is not just the react which makes our application faster, there are other parts to it as well, webpack is used when we create a react application using create-react-app package, it is also a famous bundler also there exists other bundlers out there like vite, Rollup,etc How about this explaintion ?
+
+
+-> Different dev and production build also
+
+Q. Why cdn links are not preferred ?
+-> 1. Because of the latency, it takes time to load the resources from the cdn, so it is not preferred for the production build, we should use the local resources instead of cdn links
+-> 2. Because of the (security), if we are using the cdn links, then we essentially trusting a third-party server to deliver the library to your users. This can be a security risk, as you have no control over the content being served. What if the CDN is compromised or serves a malicious version of the library?
+-> 3. Because of the (Version Control), CDN links often point to a specific version of the library. If you're using a CDN link, you have no control over the version being used, which can lead to compatibility issues or unexpected behavior when a new version is released.
+-> 4. Because of the (Customization and Tree Shaking),When you use a CDN link, you're including the entire library, even if you only need a small part of it. This can lead to unnecessary bloat and slower load times. By using a package manager like npm or yarn, you can take advantage of tree shaking, which removes unused code and reduces the overall bundle size.
+-> 5. Because of the (Debugging), When you use a CDN link, it can
+make it harder to debug issues, as you're relying on a third-party server to deliver the library
+-> 6. Because of the (Performance), Using a CDN link can lead to slower load times
+-> 7. Because of the (Cost), Using a CDN link can lead to additional costs,
+
+
+Q. Diff between normal and dev dependencies ?
+-> Normal dependencies are the ones that are required for the production build, whereas dev dependencies are the ones that are required for the development build, like the bundler, the linter, the debugger, the test runner, the code formatter, the code analyzer, the code optimizer, the code compressor, the code minifier, the code obfuscator, the code encryptor, the code decryptor
+
+-> Both are however installed in the same node_modules folder however dev dependencies are not included while we do a production build
+-> dev dependencies are only needed at the time of development not at the runtime of the application whereas normal dependencies are needed at the runtime for the functioning of the application
+
+# More Explaination : 
+# you need certain dependencies to help you with tasks such as bundling, linting, testing, and formatting. These dependencies are indeed required for the development process, and they're typically classified as dev dependencies.
+
+# However, when you're building your application for production, you don't need these dev dependencies anymore. Here's why:
+
+# Bundling: When you bundle your code for production, the bundler (e.g., Webpack) takes care of packaging all the necessary code into a single file or a set of files. The bundler itself is not needed at runtime.
+# Linting: Linters (e.g., ESLint) check your code for errors and warnings during development. Once your code is built and deployed, the linter is no longer needed.
+# Testing: Test runners (e.g., Jest) are used to execute your tests during development. In production, your tests are not executed, so the test runner is not required.
+# Formatting: Code formatters (e.g., Prettier) are used to format your code during development. Once your code is built and deployed, the formatter is no longer needed.
+# In general, dev dependencies are tools that help you develop, test, and build your application. They're not required for the application to function at runtime.
+
+# Think of it like building a    house. You need construction tools (e.g., hammers, saws) to build the house, but once the house is built, you don't need those tools inside the house. Similarly, dev dependencies are like construction tools that help you build your application, but they're not needed when the application is running.
+
+# When you do a production build, the build process takes care of removing the dev dependencies, so they're not included in the final bundle. This makes sense because the dev dependencies are not needed at runtime, and including them would only add unnecessary weight to your application.
+
+Q. Bundlers - Webpack, Vite, Parcel
+Q. Normal JavaScript can't have import or export ?
+    <script src="./App.js"></script>
+-> we are writing this, the browser will see it as the normal js file
+-> however this is not a normal js file after all
+-> so explicitly we are saying that its of type = "module"
+    <script type="module" src="./App.js"></script>
+    # Using type="module"
+
+    # When you use the type="module" attribute in HTML script tags, JavaScript files are treated as modules. This approach provides several benefits:
+    
+    # Scope: Variables and functions defined in a module are only available within that module, unless they are explicitly exported.
+    # Import and Export Statements: Modules can import and export variables and functions, making it easier to manage dependencies between scripts.
+    # Dependency Management: Modules can declare their dependencies explicitly, making it easier to track what's being used and what's not.
+    # Async Loading: Modules are loaded asynchronously, which can improve page load times.
+    
+    
+    Traditional JavaScript (without type="module")
+    # If you don't use the type="module" attribute, JavaScript files are loaded in the traditional way, where:
+    # Global Scope: Variables and functions defined in one script are available globally, which can lead to:
+    # Naming Conflicts: Variables or functions with the same name can overwrite each other.
+    # Namespace Pollution: The global scope can become cluttered, making it harder to keep track of what's available and what's not.
+    # Tight Coupling: Scripts become tightly coupled to each other, making it harder to modify or replace one script without affecting others.
+    # In summary, traditional JavaScript's global scope approach can lead to naming conflicts, namespace pollution, and tight coupling between scripts. Modules solve these problems by introducing a new scope for each module, making it easier to manage dependencies and avoid conflicts.
+
+
+
+-> npm start => npm run start => parcel index.html
+
+# jsx 
+-> it is not HTML in JS
+-> HTML / XML like syntax
+-> JSX is just a syntax
+-> 
+
+$ What is Babel ?
+-> Babel is a popular JavaScript transpiler that converts modern JavaScript code (including JSX) into older syntax that can be understood by older browsers or environments
+-> When you write JSX code, Babel takes that code and converts it into regular JavaScript code that can be executed by the browser or Node.js environment. This process is called "transpilation".
+Q. How does it work?
+-> When you run Babel (or another transpiler) on your JSX code, it performs the following steps:
+        1. Parsing: The transpiler parses the JSX code into an Abstract Syntax Tree (AST).
+        2. Transformation: The transpiler transforms the AST into a new AST that represents the equivalent JavaScript code.
+        3. Generation: The transpiler generates the final JavaScript code from the transformed AST.
+
+
+
+
+-> Config Driven UI
+- website is driven by Data/Config
+- UI is driven by a config
+
+
+- Frontend application is built upon UI layer & Data Layor
+
+
+
+
+
+
+
+
+# React don't recommend to use indexes as the keys while using the map function 
+
+
+
+# In order to keep the data and the UI layer consistent to each other, thats the exact problem React solves
+# If my data changes, my UI changes
+# React is Fast, because it does the DOM Manipulation so fast
+# There is something known as Virtual DOM, Diff Algorithm, Reconcillation
+
+
+
+
+# Hook 
+-> Normal JS Function 
+-> Utility Function Created by React
+
+
+
+- useState()
+# superpowerful state variable
+-> Never create state variable outside the component. It just does not make sense ... # React state is meant to be scoped to a specific component. When you create a state variable inside a component, it's tied to that component's lifecycle and can be updated and managed by React.
+-> useState() has a specific purpose, it is used to create local state variables inside the function component. So always call it inside the function
+-> always try to call the useState() at the top of the component
+-> Never use the state variables inside a function, loop or conditionals
+
+-> Whenever a state variable changes, React will re-renders the component
+-> Why are there 2 things ?
+-> Why can't we modify it directly ?
+-> because there needs to be a trigger to start the diff Algorithm and update the UI, thats why they created the second function
+-> whenever we call the second function it will automatically re-render the component
+
+-> as soon as we call the fn, it will update the var, will render the header component once again it will find the diff between the older version and the newer version and it will see that in that diff only this btn is updated, only btn will be changed, this is happening in the diff Algorithm, this is Reconcillation, this is why React is fast 
+
+-> Whenever the state variable update, react triggers a Reconcillation cycle ( which basically means re-rendering the component )
+-> React will re-render the whole component but it will only update the variable inside the DOM which triggers the Reconcillation cycle
+How React works behind the schenes?
+-> Reconcillation Algorithm (React Fiber) - came in (React 16)
+$ Here's how the flow goes : 
+# 1. State variable changes: When a state variable changes, it triggers the Reconciliation cycle.
+# 2. Reconciliation cycle (React Fiber): React Fiber kicks in, scheduling a re-render of the component.
+$ When React Fiber re-renders the component, it creates a new virtual DOM representation, not just updates the existing one.
+# 3. Re-rendering: React Fiber re-renders the component, creating a new virtual DOM representation.
+# 4. Diffing algorithm: The diffing algorithm compares the new virtual DOM with the previous virtual DOM ( why are we using virtual DOM - beacuse its faster - its nothing but a big whole JS Object ), calculating the differences between the two.
+# 5. Diff calculation: The diffing algorithm determines exactly what has changed between the two virtual DOMs.
+# 6. DOM update: React Fiber updates the real DOM by applying the calculated diff, only changing the parts that have actually changed.
+
+
+"When a state variable changes, it triggers the Reconciliation cycle, which is managed by React Fiber. React Fiber then schedules a re-render of the component, creates a new virtual DOM, and updates the real DOM by applying the calculated diff."
+- Key Takeaway:
+"Reconciliation is a process, and React Fiber is the algorithm that powers this process. React Fiber is responsible for managing the Reconciliation cycle, ensuring that the DOM is updated efficiently and effectively."
+
+
+Q. React Fiber ?
+-> Its a re-implementation of React's core algorithm, introduced in React 16.
+-> It's a new architecture for building React applications, designed to improve performance, scalability, and responsiveness.
+-> React Fiber is responsible for scheduling, rendering, and reconciling components.
+-> It's the underlying engine that powers React's rendering pipeline.
+$ Diffing Algorithm in React Fiber ?
+-> The diffing algorithm is used by React Fiber to calculate the differences between the two versions of a component.
+Q. Incremental Rendering ?
+-> Incremental Rendering is a technique used in React Fiber to improve performance and responsiveness by rendering a component tree in smaller, incremental chunks, rather than re-rendering the entire tree at once.
+
+$ key features and improvements brought by React Fiber:
+1.Incremental Rendering: Renders components in smaller chunks, improving performance and responsiveness.
+2.Cooperative Scheduling: Enables React to pause and resume rendering tasks, allowing for better prioritization and responsiveness.
+3.Work-In-Progress (WIP) Tree: Represents the component tree being rendered, enabling more efficient rendering and easier debugging.
+4.Fiber Architecture: A fundamental change to how React manages and schedules rendering tasks, enabling it to handle more complex and dynamic applications.
+
+
+-> Virtual DOM
+$ representation of actual DOM  
+$ nothing but a normal JS Object (Nested)
+"a lightweight in-memory representation", I meant that the virtual DOM is a data structure that exists only in memory (i.e., in the JavaScript heap) and is a lightweight representation of the real DOM.
+
+Here's what I mean by "lightweight":
+
+$ In-memory: The virtual DOM is a JavaScript object that exists only in memory, which means it's not a physical representation of the DOM like the actual HTML elements on the page. It's a data structure that's created and managed by React.
+$ Lightweight: The virtual DOM is a simplified representation of the real DOM. It doesn't contain all the heavy-weight properties and methods that actual DOM elements have. Instead, it's a minimal representation of the DOM tree, which makes it faster and more efficient to work with.
+"Think of the virtual DOM as a blueprint or a sketch of the real DOM. It's a simplified representation that contains only the necessary information to render the UI. This lightweight representation makes it possible for React to perform efficient updates and diffing (comparing) between the virtual DOM and the real DOM."
+
+-> Diff Algorithm
+$ finds out the diff b/w old Virtual DOM and new Virtual DOM
+$ it will calculate the difference and then, will actually update the original DOM on every render cycle
+
+$ whenever there is a change in any state variable, React will find out the difference between Virtual DOM and it will re-render our component
+$ It will update the DOM    
+
+Q. Why React is so fast ?
+$ React is doing Efficient DOM Manipulation
+$ because it has a Virtual DOM ( JS representation of DOM )
+$ React Efficiently find out the difference b/w Virtual DOMs and update the UI
+
+$ finding the difference b/w 2 HTML codes is tough but finding the diff between 2 objects is fast (JS is fast right)
+
+
+
+- useEffect()
+
+syntax
+useEffect(__callback_fn__,[dependency_List])
+useEffect(()=>{},[])
+
+Q. When this useEffect is called ?
+-> It is called "after" every render of that component.
+-> let's say i am using useEffect inside my header component, so as per the definition given above the useEffect hook will be called every time after the header
+component is rendered.
+
+-> The basic nature of the useEffect hook is to be called on every component render
+
+-> When we call (useEffect) without any dependency array => useEffect is called on every component render
+-> When we call (useEffect) with empty dependency array => useEffect is called only on first component render ( the initial render )
+-> When we call (useEffect) with some dependencies => useEffect is called when the dependencies (changes/updated) & ( the initial render as well for the component)
+-> 
+
+
+
+
+
+
+
+
+Q. When this __callback_fn__ will be called ?
+-> This will be called after our component is rendered
+
+
+
+- useRef()
+## Notes on `useRef` Hook
+
+### What is `useRef`?
+
+- **Purpose**: `useRef` is a React hook used to create a mutable reference to a DOM element or a variable that persists for the entire lifetime of a component.
+
+### Key Features
+
+1. **Mutable Object**:
+- Returns an object with a `current` property.
+- The value of `current` can be changed without causing the component to re-render.
+
+2. **Accessing DOM Elements**:
+- Allows direct access to DOM elements (e.g., input fields, buttons).
+- Useful for operations like focusing, measuring, or triggering events on elements.
+
+3. **Storing Values**:
+- Can hold any mutable value (like numbers, strings, or objects).
+- Useful for keeping track of values that do not need to trigger a re-render when updated.
+
+### Why Does `useRef` Exist?
+
+- **Avoiding Re-renders**:
+- Updating `current` does not cause a re-render, making it efficient for performance-sensitive tasks.
+
+- **Direct DOM Manipulation**:
+- Provides a way to interact directly with the DOM when necessary, while still adhering to React's declarative approach.
+
+### Example Usage
+
+```jsx
+import React, { useRef } from 'react';
+
+const FocusInput = () => {
+    const inputRef = useRef(null); // Create a ref
+
+    const handleFocusClick = () => {
+        if (inputRef.current) {
+            inputRef.current.focus(); // Focus the input element
+        }
+    };
+
+    return (
+        <div>
+            <button onClick={handleFocusClick}>Focus the Input</button>
+            <input ref={inputRef} type="text" />
+        </div>
+    );
+};
+
+export default FocusInput;```
+
+"Understanding the current Property"
+Q. What is current?
+    $ A property of the object returned by useRef that holds the value or reference.
+Q. How Does It Work?
+> Can store:
+    $ A reference to a DOM element.
+    $ Any mutable value to remember across renders.
+Q. Why Use current?
+    $ Direct Access: Interact with DOM elements directly.
+    $ Persistence: Values stored persist for the component's lifetime without causing re-renders.
+
+"Example of Using current"
+```   
+import React, { useRef } from 'react';
+
+    const TimerComponent = () => {
+        const timerRef = useRef(null); // Create a ref to hold the timer ID
+    
+        const startTimer = () => {
+            timerRef.current = setInterval(() => {
+                console.log('Timer is running...');
+            }, 1000);
+        };
+    
+        const stopTimer = () => {
+            clearInterval(timerRef.current);
+            console.log('Timer stopped');
+        };
+    
+        return (
+            <div>
+                <button onClick={startTimer}>Start Timer</button>
+                <button onClick={stopTimer}>Stop Timer</button>
+            </div>
+        );
+    };
+    
+    export default TimerComponent;
+```
+
+
+
+
+
+
+
+
+----------------------------(MONOLITH)-------------------------------
+
+
+
+
+
+
+----------------------------(MICROSERVICE)-------------------------------
+
+-> Single Responsibility Principle
+
+
+
+----------------------------(CONTAINERIZATION)-------------------------------
+
+
+
+
+
+@ 2Ways to fetch the data
+
+1. Page Loads => API call  => Render
+
+2. Page Loads => Render It => API call => Re-Render
+-> In React, we always use (2nd) Approach
+-> Gives better UX
+
+~ Now we have a question that we are re-rendering the stuff
+-> The fact that react is so famous is because its render cycle are so fast, it renders the stuff very fast
+
+
+
+# Single Page Approach
+-> We have a single page, and we are re-rendering the stuff on that page
+-> We are not navigating to different pages, we are just re-rendering the stuff on the same
+page
+-> This is the core of Single Page Application (SPA)
+-> Just the components are changing here and there, but it gives the user an illusion that he is moving to multiple pages
+-> React uses Client-side Routing to achieve this
+
+# There are 2 types of routing which we can have in web applications
+1. Client-side routing ( the routing is handled by the browser itself )
+-> Client-side routing is the most common one
+-> Client-side routing is the one where the routing is handled by the client side, i.e.
+-> The routing is handled by the browser itself
+
+2. Server-side routing ( the routing is handled by the server )
+-> Server-side routing is the one where the routing is handled by the server side, i.e.
+-> The routing is handled by the server itself
+-> Make a n/w call and that about.html is coming from the server
+-> This is the traditional way of routing, but it is not used much nowadays
+
+# static Routing Vs Dynamic Routing 
+-> In static routing, the routes are defined at build-time, which means that the routes are hardcoded into the application. The routes are determined before the application is even deployed, and they remain the same until the next build.
+
+# Dynamic Routing
+-> Dynamic routing is the one where the routing is handled by the client side, but the routing is
+-> Not fixed, it is dynamic
+-> In dynamic routing, the routes are defined at runtime, which means that the routes are generated dynamically based on user input, data from an API, or other factors. 
+
+const routes = [
+    //Static-Routes  ( hardcoded at compile-time only )
+    # { path: '/', component: HomePage },
+    # { path: '/about', component: AboutPage },
+    # { path: '/contact', component: ContactPage },
+    //Dynamic-Routes ( created at run-time ) 
+    # { path: `/users/${userId}`, component: UserProfile },
+    # { path: `/products/${category}`, component: ProductList }
+   ];
+
+# Class Based Components
+-> class User extends React.Component {
+        // If you don’t initialize state and you don’t bind methods, you don’t need to implement a constructor for your React component.
+        // Typically, in React constructors are only used for two purposes:
+                1. Initializing local state by assigning an object to this.state.
+                2. Binding event handler methods to an instance.
+
+        constructor(props){
+            super(props);
+            # Why do we write super(props) ?
+            
+            # How to create state variables ?
+            this.state = {
+                # this is the huge object which will hold all the state variables
+                count : 0, // i have given a default value over here as 0, when the component will render it will take this default value
+                # count2 : 1,
+            }
+
+        }
+        render(){
+            return (
+                <div>{this.props.___}</div>
+                # Explain the this keyword ?
+                
+                <button onClick = ()=>{
+                    this.setState({
+                        # this huge object will contain the updated value of the state variables
+                        count : this.state.count + 1,
+                    })
+                }>
+                BTN
+                </button>
+            )
+        }
+
+}
+-> Whenever you create a new instance ( this time when the class loads first ) of a Class, constructor is called, this is the best place to receive props and this is the best place to create state variables as well
+
+
+
+-> extends React.Component will tell react that its a class based component
+-> class-based component is a class which extends React.Component and it has a render method which returns a piece of JSX
+-> React.Component 
+
+Q. How does the React Class-Based Component works behind the scenes ?
+-> 
+
+-> When the class is first loaded (this class is first instantiate), first thing which will be called is the constructor function 
+-> THen the render function will be called
+-> There's one more function componentDidMount exists, it will be called after the render function
+
+$ However, this flow differs when there exists a parent and there exists more than 1 children inside that parent
+$ Here's how it works, when the Parent Component is loaded (instantiated), "parent constructor" will be called then, "parent render", then as there exists children class as well in the render function, now the child class life-cycle methods will be triggered 
+$ So again it will follow the same pattern, first the constructor function, render function and then the componentDidMount function for the children as well
+1. However, this flow doesn't remains the same when there exists more than 1 children
+2. React Comes here for us to optimize our code. But How it is optimizing ?
+# For this we have to understand how does the component is mounted first its not that straighforward or one-way task. Lets see that 
+
+$ Component is mounted in 2 phases (People often says React is Fast, but they don't know actually why it is fast, this is why it is fast because it has 2 phases when it comes to render a component), namely "Render Phase" and "Commit Phase"
+$ In the "Render Phase", React will render all the components, but it will not update the DOM, it will just create a virtual DOM (a lightweight in-memory representation of the real DOM)
+$ In the "Commit Phase", React will update the real DOM with the virtual DOM created in the "Render Phase"
+$ Now, when there exists more than 1 children, React will first render all the children,
+$ Then it will render the parent component, and then it will update the DOM with the virtual DOM
+$ So, the life-cycle methods of the children will be triggered first, then the life-cycle methods of the parent component will be triggered
+
+$ In the "RENDER" phase, 
+$ first constructor is called, then the render function is called then
+$ The "COMMIT" phase
+$ here, actually the React updates the DOM, once the DOM is updated, then componentDidMount is called
+
+$ Render Phase has constructor and render
+$ In the Commit Phase, React actually updates the DOM
+$ 
+$ Now what happens is as there were 2 childrens (class-based-component) present in the parent (class-based-component), React optimises this, React will not call the componentDidMount for the first child instead it will batch the render-phase ( constructor + render ) for all the childrens and then it will batch the Commit-phase for all the childrens (basically which includes the DOM-Manipulation) and then it will call the componentDidMount for the all the childrens (Remember react has batch the Commit phase for all the childrens)
+$ Why React is doing so ?
+1. This is the Optimisation of the React, as the most expensive thing while loading/mounting the component is the DOM Manipulation and it takes a lot of time than render phase ( what happens in the render phase, React is triggering the Reconcillation process (finding out the diff in the Virtual DOM ), everything is happening in a virtual Dom over here, what is that, nothing but a JS object that is why render phase is fast, because we are just finding the diff), and the actual updation (DOM Manipulation) will happen in the Commit phase, so React is trying to batch the render phase for the all the childrens so that it quickly renders it on the UI and then combininlgy it will update the UI (in a batch for all the childrens)
+2. All the child is rendered, then the commit phase is happened, then the DOM updation happens  (So React tries to batch up this task)
+
+
+$ Try to understand, that is why the componentDidMount is the best place to make an API call as the DOM is updated on the UI ( this means first the react created a Virtual DOM first with the stuff which we have written and it calculates the diff (basically the Reconcillation) and it just shows the UI with our stuff ), then the componentDidMount is called, Remember we were following the second Approach for making an API call, 
+( Page Loads -> render it -> Make API call -> Re-Render it ) as this creates a better UX
+$ componentDidMount helps us in doing just that
+
+$ --- MOUNTING ---
+$   Constructor (dummy)
+$   Render (dummy)
+$       <Html is loaded with dummy data>
+$   componentDidMount(
+$       <API CALL>
+$       <this.setState> -> state variable is updated
+$        )
+
+
+$ --- UPDATE ---
+$   render (API_DATA)
+$       <HTML is loaded with the new API_DATA>
+$   componentDidUpdate
+$
+
+
+-> This function is called when the component is mounted on the web page
+
+Q. Why componentDidMount exists ?
+-> one important usecase is to make an API call
+-> Remember how do we make an API call inside the Functional Component? We use useEffect(()=>{},[]), this means API call will happen when our Component is rendered on the screen
+-> I want to render my component as fast as possible, then make an API call then fill the data, and then re-render the component
+-> It is only called once as after the 1st render phase is completed then we come to the commit phase then,it is invoked immediately after a component is mounted (inserted into the tree).
+1. And, when the component is updated then the componentDidUpdate is called in the further subsquent calls not the componentDidMount
+
+
+$ Always Remember, never compare Functional Component with Class-level Component
+
+Q. WHy can't we use the following ?
+useEffect(async()=>{})
+
+
+# Chunking, Code Splitting, Dynamic Bundling, Lazy loading, on-demand loading, dynamic import
+
+
+Sass, SCSS, styled-components, Material UI, Ant-Design, Bootstrap, Chakra UI
+
+
+$ About PostCSS
+# postcssrc -> we have to tell postcssrc that we are using tailwind
+# if you want to use tailwind, parcel need to use postcssrc to read tailwind
+# parcel will use postcssrc to understand tailwind
+# .postcssrc file tells PostCSS to use the tailwindcss plugin with its default settings. When you run PostCSS, it will process your CSS code using the Tailwind CSS framework, allowing you to use its utility classes and features in your CSS code.
+
+$ Higher Order Function
+-> Takes a component and return a component (with the modifications)
+
+$ Controlled and UnControlled Components
+> Controlled Component: Value is stored in parent component's state, and changes are handled by callbacks. Provides fine-grained control and enables features like form validation.
+- you might say a component is “controlled” when the important information in it is driven by props rather than its own local state. This lets the parent component fully specify its behavior.
+> Uncontrolled Component: Value is managed by the component itself, using a ref to access the DOM node. Useful when simplicity and performance are key, and no validation or change handling is needed.
+- uncontrolled because its parent cannot influence whether the panel is active or not.
+
+$ Lifting Up the state
+- Sometimes, you want the state of two components to always change together. To do it, remove state from both of them, move it to their closest common parent, and then pass it down to them via props. This is known as lifting state up
+-> When you want to coordinate two components, move their state to their common parent.
+-> Then pass the information down through props from their common parent.
+-> Finally, pass the event handlers down so that the children can change the parent’s state.
+-> It’s useful to consider components as “controlled” (driven by props) or “uncontrolled” (driven by state).
+
+# Defintion stuff
+- Lifting up the state refers to the process of relocating state data from a lower-level component to a higher-level component in the component hierarchy. This allows the state to be managed and shared more efficiently among components, promoting a more scalable and maintainable architecture.
+- By lifting up the state, you are essentially moving the single source of truth for that particular piece of data to a more centralized location, making it easier to access and update from multiple components. This approach helps to reduce data redundancy, improve data consistency, and simplify the overall data flow within the application.
+
+$ One Place for Each Piece of Information
+-> In a React app, many components have their own information (called "state"). This state can be stored in different places, like in a small component or in a bigger one that's higher up in the app.
+-> The idea is to choose one specific component to be in charge of each piece of state. This is called the "single source of truth". It means that instead of having the same information in multiple places, you keep it in one place and share it with other components that need it.
+-> For example, imagine you have a website with a login feature. The login information (like the username and password) should be stored in one place, like a top-level component. Then, you can pass that information down to smaller components that need it, like the login form or the user profile page.
+
+
+$ props-drilling
+
+
+$ Context-API
+# Context
+-> In React, Context is a way to share data between components without passing props down manually at every level. It's a powerful tool for managing global state and avoiding prop drilling.
+"Q. What is Context?"
+-> Context is a "built-in React API" that allows you to create a centralized store of data that can be accessed by any component in your application. It's like a global object that holds some data, and any component can subscribe to it to receive updates.
+-> Context passes through any components in the middle.
+-> Context lets you write components that “adapt to their surroundings”.
+-> Context lets a component provide some information to the entire tree below it.
+-> Context lets a component ask for information from the entire tree above it.
+
+-"To pass context":
+    1. Create and export it with export const MyContext = createContext(defaultValue).
+    2. Pass it to the useContext(MyContext) Hook to read it in any child component, no matter how deep.
+    3. Wrap children into <MyContext.Provider value={...}> to provide it from a parent.
+
+"Q. How does it work in-detail ?"    
+- 1. Creating a Context
+> To create a context, you use the createContext() function from the react package. This function "returns an object with two properties: Provider and Consumer."
+e.g.,
+$ import { createContext } from 'react';
+$ const UserContext = createContext();
+
+- 2. Creating a Provider
+> The Provider component is used to "wrap the entire application" and provide the "context values to all components". You create a provider by defining a function that returns the Provider component with the "values you want to share".
+e.g.,
+$ const UserProvider = ({ children }) => {
+$   const [logIn, setLogin] = useState(false);
+$   return (
+$     <UserContext.Provider value={{ logIn, setLogin }}>
+$       {children}
+$     </UserContext.Provider>
+$   );
+$ };
+> In this example, the UserProvider component takes a children prop, which represents the child elements of the component. The UserContext.Provider component is returned with the value prop set to an object with logIn and setLogin properties.
+
+- 3. Wrapping the App with the Provider
+> To make the context values available to all components, you need to wrap your "entire app with the UserProvider component".
+e.g.,
+$ import React from 'react';
+$ import ReactDOM from 'react-dom';
+$ import App from './App';
+$ import UserProvider from './UserProvider';
+$ ReactDOM.render(
+$     <UserProvider>
+$       <App />
+$     </UserProvider>
+$ );
+
+- 4. Accessing the Context with the useContext Hook
+> To access the context values in a component, you use the useContext hook. This hook takes the context object as an argument and returns the context values.
+e.g.,
+$ const Header = () => {
+$   const { logIn, setLogin } = useContext(UserContext);
+$   return (
+$     <div></div>
+$   )
+> In this example, the useContext hook is used to access the logIn and setLogin "values from the UserContext". The Header component can then use these values to render a welcome message or a log in/out button.
+
+# Key Concepts
+1.Context       : A centralized store of data that can be accessed by any component in the application.
+2.Provider      : A component that provides the context values to all components.
+3.Consumer      : A component that accesses the context values using the useContext hook.
+4.useContext    : A hook that takes the context object as an argument and returns the context values.
+
+$ MY EXPLAINATION
+- UserContext.js
+> Here we are creating the context first using createContext() function which returns an object which have 2 properties; Provider and Consumer and in this UserContext.js file we have created a function UserProvider which while returning we are returning MyContext.Provider, the values that we want all the components to have and at the end of the file we are exporting the Context, and the Provider
+- App.js
+> Here we are wrapping all the components with the Provider function that means all the components will have the access to all the values which we wrote in MyContext.Provider value ={} 
+- Header.js
+> Here for any component to access the context React gives us a hook useContext, syntax : useContext(UserContext), which means we are using the UserContext and here using this hook means we are accessing UserContext.Consumer which will return an object with all the values which we put "MyContext.Provider value ={}" and we are destructuring it in this file basically.
+
+
+
+
+
+
+
+
+
+$------------------------------------ REDUX ---------------------------------------
+$ Redux Toolkit
+    - Install @reduxjs/toolkit & react-redux
+    - Build our store
+    - Connect our store to our app
+    - Create Slice
+    - dispatch an Action
+    - Reducers
+    - Selector
+
+
+- Whenever you are doing a Selector, make sure you are subscribing to the right portion of the data or else it can be a big Performance loss;
+$ useSelector(hook) - why it is named as selector because you are basically selecting a portion of the store
+$ const cartItems = useSelector( store  => store.cart.items )
+$ this means we are subscribed to the cart items, whenever this gets updated our cartItems will automagically gets updated as well
+$ Thats why we are saying that it can be a big performance loss as we don't have to subscribe to the whole store ( that's a pretty huge object )
+$ You can use the `useSelector` hook to select a specific piece of data from the state tree. This hook takes a selector function as an argument, which is used to determine which part of the state tree to select.
+
+- Redux Store
+$  the Redux Store is an object that holds the entire state of your application.
+$  It's the single source of truth for your application's state.
+$  The store is responsible for managing the state of your application, and it's the central hub for all state-related operations.
+
+
+
+
+
+Vanilla Redux => Dont mutate the state, returning was mandatory
+
+addItem : (state,action) => {
+    const newState = [...state];
+    newState.items.push(action.payload);
+    return newState;
+
+
+    # RTK
+    # Now we HAVE to mutate the state
+    state.items.push(action.payload);
+    # behind the scenes redux is still doing the same stuff
+    - It is using IMMER behind the scene
+    - IMMER library is kind of like finding the diff b/w the original state and the mutated state and gives you back the new state which is a immutable state
+    
+}
+
+$--------------------- OFFICIAL STUFF----------------------
+Q. WHat is Redux ?
+> Redux is a pattern and library for managing and updating global application state, where the UI triggers events called "actions" to describe what happened, and separate update logic called "reducers" updates the state in response. It serves as a centralized store for state that needs to be used across your entire application, with rules ensuring that the state can only be updated in a predictable fashion.
+
+Q. Why Should I Use Redux?
+Redux helps you manage "global" state - state that is needed across many parts of your application.
+
+Q. When Should I Use Redux?
+> Redux is more useful when:
+    >You have large amounts of application state that are needed in many places in the app
+    >The app state is updated frequently over time
+    >The logic to update that state may be complex
+    >The app has a medium or large-sized codebase, and might be worked on by many people
+
+
+> Redux at its core is a small standalone JS library
+
+- REDUX TOOLKIT
+> "Redux Toolkit" is the recommended approach for writing Redux logic. It contains packages and functions that we think are essential for building a Redux app.
+- REACT-REDUX
+> React-Redux is the official package that lets your React components interact with a Redux store by reading pieces of state and dispatching actions to update the store.
+
+Q. IDEA BEHIND THE REDUX 
+> multiple components that need to share and use the same state, especially if those components are located in different parts of the application. Sometimes this can be solved by "lifting state up" to parent components, but that doesn't always help.
+> This is the basic idea behind Redux: "a single centralized place" to contain the global state in your application, and specific patterns to follow when updating that state to make the code predictable.
+
+> React and Redux (expect) that "all state updates are done immutably".
+
+$  -------------------- MORE ON IMMUTABILITY ( in JS ) ------------------------ 
+- Primitive Types in JavaScript
+There are the primitive types like "string, number, boolean (and also symbol, undefined, and null)". These ones are "immutable". a.k.a. read-only, can’t be changed.
+> When a variable holds one of these primitive types, you can’t modify the value itself. You can only "reassign" that variable to a new value.
+
+- Every other type: Objects, Arrays, etc.
+> The other category is the object type. This encompasses objects, arrays, functions, and other data stuctures like Map and Set. They are all objects.
+> The big difference from primitive types is that "objects are mutable! You can change the value in the box."
+
+Q. Why IMMUTABILITY even matters ? 
+$ Immutable is Predictable
+> If you pass a primitive value into a function, the original variable you passed in is guaranteed to be left alone. The function can’t modify what’s inside it. You can rest assured that the variable will always be the same after calling a function – any function.
+
+> But with objects and arrays (and the other object types), you don’t have that assurance. "If you pass an object into a function, that function could change your object. If you pass an array, the function could add new items to it, or empty it out entirely."
+
+> So this is one reason why a lot of people in the JS community try to write code in an immutable way: it’s easier to figure out what the code does when you’re sure your variables won’t change unexpectedly. If every function is written to be immutable by convention, you never need to wonder what will happen.
+
+--------------- MORE ON (PURE FUNCTIONS) -----------------
+> "A function that doesn’t change its arguments, or anything outside of itself, is called a pure function. If it needs to change something in one of its arguments, it’ll do that by returning a new value instead. This is more flexible, because it means the calling code gets to decide what to do with that new value."
+
+> The crucial thing to understand is that the object hasn’t changed. In fact, even if we made a “copy” of the book by saving it in another variable before modifying it, we still wouldn’t be making a new object. See the following code for better understanding
+/*
+let book = {
+    title: "Tiny Habits",
+    author: "BJ Fogg",
+    isCheckedOut: false
+}
+
+let backup = book  # It looks like we have copied the book object however we haven't, both the variables is pointing to the same object in the memory so changing the backup will lead changes to the book object as well as both are refering to the same object in the memory
+# The line let backup = book will point the backup variable at the existing book object. (it’s not actually a copy!)
+book.isCheckedOut = true
+
+  console.log(backup === book)  // true!
+  console.log(backup.isCheckedOut)  // also true!!
+*/
+- Mutating an Object in a Function
+> It doesn’t matter whether book.isCheckedOut = true occurs inside a function or outside, because that assignment will modify the internals of the book object either way.
+> If we want to prevent that from happening, you need to make a copy, and then change the copy.
+
+Q. The ... Spread Operator
+> When this ... notation is placed before an object or array, it "unwraps the children within", and inserts them right there.
+>  the spread operator makes it easy to create a new object or array that contains the "exact same contents as another one". This is useful for creating a copy of an object/array, and then overwriting specific properties that you need to change
+
+
+- Cloning an Object in Javascript: Shallow Copy vs. Deep Copy
+Shallow Copy vs Deep copy
+There are two ways to clone an object in Javascript:
+
+$ Shallow copy: 
+> means that only the "first level of the object is copied". Deeper levels are referenced.THis means that whenever you change a property in a deeper level for 1 object it will change for all the object in which you have created a shallow copy of that object as these deeper level properties are referenced not copied
+$ Deep copy: 
+> means that all levels of the object are copied. This is a true copy of the object.
+
+E.g., 
+let obj1 = {first : "Parth",skills : ["Python","JS"]};
+#  Shallow Copy 
+let obj2 = {...obj1};
+obj2.skills[1] = "JavaScript";
+# this will change the original object as well as these deeper level properties are just referenced
+console.log(obj1.skills); 
+#  Output  : ["Python","JavaScript"]
+
+# Deep Copy
+let obj3 = JSON.parse(JSON.stringify(obj1));
+obj3.skills[1] = "Node.js";
+# This will not change any object as this is a completely new object (true copy)
+console.log(obj1.skills)
+#  Output  : ["Python","JavaScript"]
+
+Q. So What to Use ?
+> For obvious reasons, shallow copies are a lot faster than deep copies. But this doesn’t mean that you should always use a shallow copy, because sometimes you will also need a copy of the nested objects. 
+- If the depth of your object is equal to one, use a shallow copy.
+- If the depth of your object is bigger than one, use a deep copy.
+
+$ Lets move back to the Redux now ...
+- Terminologies
+$ Actions : 
+> An action is a "plain JS object" that has a "type" field. 
+> You can think of an "action as an event" that describes something that happened in the application.
+> The type field should be a string that gives this action a descriptive name, like "todos/todoAdded". We usually write that type string like "domain/eventName", where the first part is the feature or category that this action belongs to, and the second part is the specific thing that happened.
+-"Payload"
+> An action object can have "other fields with additional information about what happened". By convention, we put that information in a field called payload.
+e.g., 
+>   const addTodoAction = {
+        type: 'todos/todoAdded',
+        payload: 'Buy milk'
+    }
+-> Who will write the action object by-hand.. thats boring instead we are having a function for that : 
+
+$ Action Creators
+> An action creator is a "function that creates and returns an action object". We typically use these so we don't have to write the action object by hand every time:
+e.g.,
+/*
+    const addTodo = text => {
+        return {
+            type: 'todos/todoAdded',
+            payload: text
+        }
+    }
+*/
+
+$ Reducers
+> A reducer is a function that receives the current state and an action object, decides how to update the state(if necessary), and returns the new state: (state, action) => newState
+> You can think of a reducer as an event listener which handles events based on the received action (event) type.
+*NOTE*
+> Reducers must "always" follow some specific rules:
+        > They should only calculate the new state value based on the state and action arguments
+        > They are "not allowed to modify the existing state". Instead, "they must make immutable updates", "by copying the  existing state and making changes to the copied values".
+        > They must be "pure" - they "cannot do any asynchronous logic", "calculate random values", or cause other "side effects"
+> The logic inside reducer functions typically follows the same series of steps:
+    - Check to see if the reducer cares about this (action)
+    - If so, make a copy of the state, update the copy with new values, and return it
+    - Otherwise, return the existing state unchanged
+
+Q. Why Are They Called 'Reducers' ?
+> The Array.reduce() method lets you take an array of values, process each item in the array one at a time, and return a single final result. You can think of it as "reducing the array down to one value".
+
+> Array.reduce() takes a callback function as an argument (and the initialValue as the second argument), which will be called one time for each item in the array. It takes two arguments:
+"previousResult",
+    - the value that your callback returned last time
+"currentItem",
+    - the current item in the array
+> The first time that the callback runs, there isn't a previousResult available, so we need to also pass in an initial value that will be used as the first previousResult.
+e.g.,
+        const numbers = [2, 5, 8]
+
+        const addNumbers = (previousResult, currentItem) => {
+            console.log({ previousResult, currentItem })
+            return previousResult + currentItem
+        }
+
+        const initialValue = 0
+
+        const total = numbers.reduce(addNumbers, initialValue)
+        // {previousResult: 0, currentItem: 2}
+        // {previousResult: 2, currentItem: 5}
+        // {previousResult: 7, currentItem: 8}
+
+        console.log(total)
+        // 15
+> Notice that this addNumbers "reduce callback" function doesn't need to keep track of anything itself. It takes the "previousResult" and "currentItem" arguments, does something with them, and returns a "new result value".
+> A Redux reducer function is exactly the same idea as this "reduce callback" function! It takes a "previous result" (the state), and the "current item" (the action object), decides a "new state value" based on those arguments, and "returns that new state."
+> We can say that Redux reducers reduce a set of actions (over time) into a single state. The difference is that with Array.reduce() it happens all at once, and with Redux, it happens over the lifetime of your running app.
+
+$ Store
+> The current Redux application state lives in an object called the store .
+> The store is created by passing in a reducer (we are writing a reducer), and has a method called getState that returns the current state value:
+        - Store ( for the whole application )
+> When we are creating our appStore over there the keyword is "reducer" because it is one big reducer that contains multiple reducers in it
+        - Slices
+> But When we are writing a slice we create multiple reducers, that is why it is "reducers"
+> When we are exporting it, "export default cartSlice.reducer" like this, we are exporting it as (what is a reducer at the end of the day ? Nothing but a combination of different small reducers ) "reducer" , as this "reducer" is a combination of different small reducers written in the "reducers" while configurating the slice
+
+
+$ Dispatch
+> The Redux store has a method called dispatch.
+> The only way to update the state is to call store.dispatch() and pass in an action object
+> The store will run its reducer function and save the new state value inside, and we can call 
+getState() to retrieve the updated value
+> We typically call action creators (writing the whole action object is tough job!! Isn't it) to dispatch the right action
+
+- NICE ANALOGY
+> You can think of dispatching actions as "triggering an event" in the application. Something happened, and we want the store to know about it. Reducers act like event listeners, and when they hear an action they are interested in, they update the state in response.
+e.g.,
+/*
+const increment = () => {
+        return {
+            type: 'counter/increment'
+        }
+        }
+        store.dispatch(increment())
+        console.log(store.getState())
+  // {value: 2}
+*/
+
+$ Selectors
+> Selectors are functions that know how to extract specific pieces of information from a store state value
+e.g.,
+/*
+    const selectCounterValue = state => state.value
+    const currentValue = selectCounterValue(store.getState())
+    console.log(currentValue)
+*/
+
+$ ONE-WAY DATA FLOW TO UPDATE THE UI, HOW DOES IT WORK WHEN WE TALK ABOUT REDUX SPECIFICALLY ?
+> Earlier, we talked about "one-way data flow", which describes this sequence of steps to update the app:
+- State describes the condition of the app at a specific point in time
+- The UI is rendered based on that state
+- When something happens (such as a user clicking a button), the state is updated based on what occurred
+- The UI re-renders based on the new state
+
+$ For Redux specifically, we can break these steps into more detail:
+- Redux Application Data Flow
+Initial setup:
+1. A Redux store is created using a root reducer function
+2. The store calls the root reducer once, and saves the return value as its initial state
+3. When the UI is first rendered, UI components access the current state of the Redux store, and use that data to decide what to render. They also subscribe to any future store updates so they can know if the state has changed.
+Updates:
+1. Something happens in the app, such as a user clicking a button
+2. The app code dispatches an action to the Redux store, like dispatch({type: 'counter/increment'})
+3. The store runs the reducer function again with the previous state and the current action, and saves the return value as the new state
+4. The store notifies all parts of the UI that are subscribed that the store has been updated
+5. Each UI component that needs data from the store checks to see if the parts of the state they need have changed.
+6. Each component that sees its data has changed forces a re-render with the new data, so it can update what's shown on the screen
+
+SUMMARY : 
+- Redux's update pattern separates "what happened" from "how the state changes"
+        > Actions are plain objects with a type field, and describe "what happened" in the app
+        > Reducers are functions that calculate a new state value based on previous state + an action
+        > A Redux store runs the root reducer whenever an action is dispatched
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NAMASTE SYSTEM Design
+https://www.1024tera.com/sharing/link?surl=QOCH1p1kU-bOMI4OfzVMCQ&path=%2FNamasteFrontendSystemDesign
+
+SQL ways to write or threat the website
+https://www.invicti.com/learn/sql-injection-sqli/
+
+- Metaspolit
+The Metasploit Project is a computer security project that provides information about security vulnerabilities and aids in penetration testing and IDS signature development. 
+
+
+
+
+- TESTING
+1.Manual Testing
+2.Writing the test cases
+
+- Types of Testing that a developer can do
+- Unit Testing
+> test ur react components in isolation
+
+- Integration Testing
+> testing the Integration of the components
+> multiple components, they are talking to each other
+
+- End to End Testing (e2e Testing)
+> testing the react application starting from the user landing on the page and until the user leaving the site, trying to replicate the user behaviour 
+
+# As a developer we are concerned about the first 2 types of Testing
+
+By default, "React Testing Library" comes with create-react-app 
+
+"React Testing Library" uses "JEST"
+"npm i -D @testing-library/react"
+
+for jest :
+"npm i -D jest"
+
+as we are using babel, so if we have to use jest along with babel, we gotta install some additional dependencies : 
+"npm install --save-dev babel-jest @babel/core @babel/preset-env"
+
+# Setting up Testing in our app
+- Install React Testing Library
+- Installed jest
+- Installed Babel dependencies
+- Configure Babel
+# Using Babel
+# To use Babel, install required dependencies:
+# "npm install --save-dev babel-jest @babel/core @babel/preset-env"
+# Configure Babel to target your current version of Node by creating a babel.config.js file in the root of your project:
+# babel.config.js
+            # module.exports = {
+            #     presets: [['@babel/preset-env', {targets: {node: 'current'}}]],
+            #     };
+
+- Configure Parcel Config file to disable default Babel Transpilation
+# To disable Babel transpilation in Parcel, override the default Parcel config for JavaScript to exclude @parcel/transformer-babel.
+# .parcelrc:
+#            {
+#                "extends": "@parcel/config-default",
+#                "transformers": {
+#                    "*.{js,mjs,jsx,cjs,ts,tsx}": [
+#                    "@parcel/transformer-js",
+#                    "@parcel/transformer-react-refresh-wrap"
+#                    ]
+#                }
+#            }
+$ This will allow other tools to continue using your Babel config, but disable Babel transpilation in Parcel.
+- Jest Configuration : "npx jest --init"
+# Jest 28
+> If you're using Jest 28 or later, jest-environment-jsdom package now must be installed separately.
+- Install jsdom library
+# npm install --save-dev jest-environment-jsdom
+# in my case it was enabled (the jsdom enviroment in jest however if it is not there) : 
+# jsdom is also no longer the default environment. You can enable jsdom globally by editing jest.config.js:
+#   jest.config.js:
+#                    module.exports = {
+#                            +  testEnvironment: 'jsdom',
+#                               // ... other options ...
+#                     }
+
+
+-Parcel uses Babel, now we are trying to add extra configs, parcel will get confused with this
+-We gotta change the 
+
+--save-dev | -D is one and the same thing
+
+// Header.test.js
+// Header.test.ts
+// Header.spec.js
+// Header.spec.ts
+// All these considered as test
+
+__test__ => this thing is called dunder
+
+- Install @babel/preset-react - to make JSX work in test cases
+- Include @babel/preset-react inside my babel config
+#   babel.config.js
+#        module.exports = {
+#                   presets: [
+#                       ['@babel/preset-env', {targets: {node: 'current'}}]
+#                       ['@babel/preset-react',{runtime : "automatic"}],
+#                   
+#                   ],
+#               };
+
+- Install @testing-library/jest-dom

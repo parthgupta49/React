@@ -1,0 +1,25 @@
+# Changing to dark-theme
+5. State-based Styling
+
+In this approach, you use React's state management (e.g., Redux or React Context) to store the current theme and update the styles accordingly. For example, you might store the theme in a Redux store and then use a selector to retrieve the current theme.
+
+Pros:
+
+Provides a robust way to manage themes
+Integrates well with React's state management
+Cons:
+
+Requires more setup and configuration
+Can be overkill for simple applications
+6. Third-party Libraries
+
+Finally, you can use third-party libraries like react-dark-mode or react-toggle-dark-mode that provide an easy-to-use API for implementing dark mode. These libraries often handle the toggling and styling for you.
+
+Pros:
+
+Easy to implement and use
+Provides a simple and straightforward API
+Cons:
+
+May not be customizable enough for complex applications
+Adds an extra dependency to your project

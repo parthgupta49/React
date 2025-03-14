@@ -1,0 +1,292 @@
+
+- Hoisting
+$ Hoisting is JavaScript's default behavior of moving declarations to the top which means a variable can   be used before it has been declared.
+$ process of moving function declaration to the top of the file 
+$ done automatically by js engine'
+$ This hoisting behavoiur works well with the variables defined with var.
+$ Variables defined with let and const are hoisted to the top of the block, but not initialized.
+Meaning: 
+The block of code is aware of the variable, but it cannot be used until it has been declared.
+Using a let variable before it is declared will result in a ReferenceError.
+The variable is in a "temporal dead zone" from the start of the block until it is declared so using it in 
+b / w TDZ will result in a ReferenceError
+
+
+- Types of hoisting : 
+$ Value Hoisting : 
+> Being able to use a variable's value in its scope before the line it is declared. ("Value hoisting")
+> This happens when we define pure functions (not the arrow functions)
+e.g.,
+        # myFun();
+        # function myFun(){
+        #     var x = 3;
+        #     console.log(x)
+        # }
+> Output : 3
+
+$ Declaration hoisting : 
+> Being able to reference a variable in its scope before the line it is declared, without throwing a ReferenceError, but the value is always undefined
+> this happens when we use var keyword to define the Variables
+e.g.,
+        # myFun();
+        # function myFun(){
+        #     console.log(x)
+        # }
+        # var x = 3;
+> Output : undefined
+
+
+
+
+- Temporal dead zone (TDZ)
+$ A variable declared with let, const, or class is said to be in a "temporal dead zone" (TDZ) from the start of the block until code execution reaches the place where the variable is declared and initialized.
+$ And if after TDZ the variable is called then, it will work just fine
+=> # Example :-
+                        {
+                        // TDZ starts at beginning of scope
+                        const func = () => console.log(letVar); // OK
+
+                        // Within the TDZ letVar access throws `ReferenceError`
+
+                        let letVar = 3; // End of TDZ (for letVar)
+                        func(); // Called outside TDZ!
+                        }
+
+
+- undefined 
+> != empty
+> its a special keyword, it takes up its own memory but we can assume it to be like a placeholder which is kept for the time being until the variable is assigned some other value 
+
+- Scope in JS is directly related to Lexical Environment
+$ In simple terms, scope means where we can access the variables and functions in our code
+
+Whenever the execution context is created, a Lexical enviroment is also created
+-> Lexical Environment is the local memory along with the reference to the Lexical enviroment of its parent
+-> Lexical in a term means in a hierarchy, or in a sequence
+e.g., 
+                    # function a(){
+                    #     var b = 10;
+                    #     c();
+                    #     function c(){
+                    #     }
+                    # }
+                    # a();
+                    # console.log(b);
+
+> c function is Lexically sitting inside a function, this is what Lexical means or we can say that where that code is present physically and a is Lexically inside the global scope, so this is known as Lexical
+> so when we say Lexical enviroment, it means the local memory along with the Lexical enviroment of the parent  
+
+- Scope Chain 
+> In JavaScript, a scope chain is a series of objects that are linked together to form a chain of scopes.   
+- How does the scope chain work?
+> When a JavaScript engine executes a script, it creates a global scope object, which is the top-most scope in the chain. The global scope object contains all the global variables and functions defined in the script.
+> When a function is called, a new scope object is created and added to the scope chain. This new scope object is linked to the previous scope object, forming a chain of scopes. The new scope object contains all the local variables and functions defined within the function.
+> When a variable or function is referenced in the code, the JavaScript engine starts searching for it in the current scope object. If it's not found, it moves up the scope chain to the previous scope object and searches again. This process continues until the variable or function is found or the global scope object is reached.
+
+> if the js engine doesn't find anything in the local memory, it goes next level of the scope chain, this process continues until the global scope is reached
+
+> whole chain of this Lexical enviroments is known as the scope chain and it defines whether a function or a variable is present inside the scope or not, if the scope chain is exhausted and the variable/ function is not found, that means, its not inside the scope chain 
+
+
+- let, const, and var
+> e.g.,
+                        # let a = 10;
+                        # console.log(a);
+                        # var b = 123;
+> this variable b was attached to the global Object but in case of let and const, they are indeed being allocated the memory but they are stored in a different memory space than Global so they are not in on the Global Object now and we can't access this memory space before we have put in some value in them
+
+
+- Block Scope
+{
+    // Compound Statement
+}
+
+
+- Closure
+$What does Closure means?
+> It means that a function binds/ bundled together with its Lexical environment 
+> function along with its Lexical scope bundled together forms a Closure
+e.g.,
+                    # function clos1(){
+                    #     let a = 10;
+                    #     function clos2(){
+                    #         console.log(a);
+                    #     }
+                    #     return clos2;
+                    # }
+                    # 
+                    # const a = clos1();
+                    # a();
+> when the function are returned from another function they still remember where they were actually present 
+> here the clos1() function would no longer exist in the call stack, still when we are invoking a() which is basically nothing but clos2(), clos2() still remembers its Lexical scope, it remembers there was a variable "a"
+> In simple words, not just the function is returned but the closure was returned, that closure encloses the function along with its Lexical scope, that was returned 
+
+
+- Uses of Closures
+> Module Design pattern
+> Currying
+> Functions like once
+> memoize
+> maintaining state in async world
+> setTimeouts
+> Iterators
+> and many more...
+
+
+
+- CallBack Function
+> We already knows that functions are first-class citizens which means that it can be passed as to another function, when we do such in that function which we passed is known as a "callback function"
+> these are very powerful, it gives us the access to the whole asynchronous world in a synchronous single threaded language
+> Due to callbacks, we can do async things inside JavaScript
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4 Pillars of OOPS
+
+Object-Oriented Programming (OOPS) is a programming paradigm that revolves around the concept of objects and classes. The 4 pillars of OOPS are:
+
+Here are the 4 pillars of OOPs (Object-Oriented Programming) considering Java only:
+
+1. Encapsulation
+
+In Java, encapsulation is the concept of bundling data and methods that operate on that data within a single unit, called a class or object. This helps to hide the implementation details of an object from the outside world and only expose the necessary information through public methods.
+
+Example in Java:
+public class Employee {
+    private String name;
+    private int age;
+
+    public Employee(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+In this example, the Employee class encapsulates the name and age fields and provides public methods to access them.
+
+2. Abstraction
+
+In Java, abstraction is the concept of showing only the necessary information to the outside world while hiding the internal implementation details. Abstraction helps to simplify complex systems by exposing only the essential features and hiding the non-essential details.
+
+Example in Java:
+public abstract class Animal {
+    public abstract void sound();
+}
+
+public class Dog extends Animal {
+    @Override
+    public void sound() {
+        System.out.println("Woof!");
+    }
+}
+In this example, the Animal class is an abstract class that provides an abstract method sound(). The Dog class extends the Animal class and provides a concrete implementation of the sound() method. The Animal class abstracts away the implementation details of the sound() method, and the Dog class provides a specific implementation.
+
+3. Inheritance
+
+In Java, inheritance is the concept of creating a new class (the child or subclass) that is a modified version of an existing class (the parent or superclass). The child class inherits the properties and behavior of the parent class and can also add new properties and behavior or override the ones inherited from the parent class.
+
+Example in Java:
+public class Vehicle {
+    public void move() {
+        System.out.println("Moving...");
+    }
+}
+
+public class Car extends Vehicle {
+    @Override
+    public void move() {
+        System.out.println("Driving...");
+    }
+}
+In this example, the Vehicle class is the parent class, and the Car class is the child class. The Car class inherits the move() method from the Vehicle class and overrides it with a specific implementation.
+
+4. Polymorphism
+
+In Java, polymorphism is the concept of an object taking on multiple forms. This can be achieved through method overriding or method overloading. Method overriding is when a child class provides a different implementation of a method already defined in its parent class. Method overloading is when multiple methods with the same name can be defined with different parameter lists.
+
+Example in Java:
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public double add(double a, double b) {
+        return a + b;
+    }
+}
+In this example, the Calculator class provides two methods with the same name add(), but with different parameter lists. This is an example of method overloading, which is a form of polymorphism.
+
+
+
+Benefits:
+Increased Flexibility: Polymorphism increases flexibility by allowing objects to take on multiple forms.
+Improved Code Reusability: Polymorphism enables code reusability by allowing objects to be treated as instances of a common superclass.
+Easier Maintenance: Polymorphism makes it easier to maintain and modify code by reducing the dependencies between objects.
+Difference between Compiled and Interpreted Languages
+
+Programming languages can be classified into two categories: compiled languages and interpreted languages.
+
+Compiled Languages
+Compiled languages are languages that are translated into machine code before they are executed. The compilation process involves the following steps:
+
+Preprocessing: The source code is analyzed and processed to prepare it for compilation.
+Compilation: The preprocessed source code is translated into assembly code or object code.
+Assembly: The assembly code is translated into machine code.
+Linking: The object code is linked with libraries and other object files to create an executable file.
+Examples of compiled languages include C, C++, and Fortran.
+
+Interpreted Languages
+Interpreted languages are languages that are translated into machine code line by line during execution. The interpretation process involves the following steps:
+
+Lexical Analysis: The source code is broken down into tokens.
+Syntax Analysis: The tokens are analyzed to ensure that they form a valid syntax.
+Semantic Analysis: The syntax is analyzed to ensure that it is semantically correct.
+Execution: The interpreted code is executed line by line.
+Examples of interpreted languages include Python, JavaScript, and Ruby.
+
+Key differences:
+
+Compilation: Compiled languages are compiled before execution, while interpreted languages are interpreted during execution.
+Execution Speed: Compiled languages are generally faster than interpreted languages because the compilation step is done beforehand.
+Platform Independence: Interpreted languages are often platform-independent because the interpreter can be written to run on different platforms.
+
+
+2. Copy Constructor using Constructor
+
+Another way to create a copy of an object in Java is by using a constructor that takes an object of the same class as an argument. This is similar to a copy constructor in C++. Here's an example:
+
+public class MyClass {
+        private int x;
+    
+        public MyClass(int x) {
+            this.x = x;
+        }
+    
+        public MyClass(MyClass other) {
+            this.x = other.x;
+        }
+    }
+
+    In this example, the MyClass class has a constructor that takes an object of the same class as an argument, which is used to create a copy of the object.
