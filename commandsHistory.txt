@@ -1,0 +1,971 @@
+parth-gupta@parth-gupta-Aspire-A715-42G:~/Desktop/project-restaurant$ history
+    1  sudo dpkg -i google-chrome-stable_current_amd64.deb
+    2  sudo dpkg -i code_1.92.1-1723066302_amd64.deb 
+    3  sudo dpkg -i google-chrome-stable_current_amd64
+    4  sudo apt update
+    5  sudo apt install code
+    6  sudo apt install google-chrome-stable
+    7  shutdown
+    8  shutdown -c
+    9  shutdown -p
+   10  shutdown -P
+   11  shutdown -c
+   12  sudo shutdown -h now
+   13  sudo apt-get install breeze-cursor-theme
+   14  sudo update-alternatives --config x-cursor-theme
+   15  sudo apt install default-jre
+   16  java -version
+   17  $ sudo apt-add-repository -y ppa:brightbox/ruby-ng
+   18  sudo apt-add-repository -y ppa:brightbox/ruby-ng
+   19  sudo apt-get update
+   20  sudo apt-get install ruby3.0
+   21  ruby -v
+   22  sudo apt-get install ruby-full
+   23  ruby -v
+   24  gem install bundler
+   25  sudo gem install bundler
+   26  export TZ = Asia/kolkata
+   27  java -Dfile.encoding=UTF-8 -webgoat-2023.8.jar
+   28  java -Dfile.encoding=UTF-8 -jar webgoat-2023.8.jar
+   29  wget https://github.com/beefproject/beef/archive/master.zip
+   30  ls
+   31  java -Dfile.encoding=UTF-8 -jar webgoat-2023.8.jar
+   32  ./install
+   33  ls
+   34  cat config.yaml 
+   35  ./beef 
+   36  sudo ./beef 
+   37  bundle install
+   38  gem bundle install
+   39  sudo ./beef 
+   40  sudo bundle install
+   41  sudo ./beef 
+   42  sudo gem uninstall
+   43  sudo gem install
+   44  sudo bundle install
+   45  ./beef 
+   46  sudo apt-get update
+   47  sudo apt-get install build-essential libssl-dev libreadline-dev zlib1g-dev
+   48  sudo bundle install
+   49  sudo ./beef 
+   50  sudo apt install nodejs
+   51  node -v
+   52  sudo ./beef 
+   53  nano config.yaml 
+   54  cat config.yaml 
+   55  sudo ./beef 
+   56  npm start
+   57  npm i
+   58  npm start
+   59  pwd
+   60  ls
+   61  cd Downloads/
+   62  ls
+   63  cd master/
+   64  ls
+   65  cd beef-master/
+   66  ls
+   67  sudo ./beef 
+   68  npm i
+   69  npm start
+   70  npm i react-router-dom
+   71  npm start
+   72  npm start
+   73  sudo apt install npm
+   74  npm start
+   75  npm i
+   76  npm start
+   77  npm run start
+   78  npm run build
+   79  npm start
+   80  npm install
+   81  npm start
+   82  node -version
+   83  node -v
+   84  sudo apt udate
+   85  sudo apt update
+   86  npm start
+   87  ls -ld /media/parth-gupta/Steve/C-drive-files/namaste-react/dist
+   88  cd ..
+   89  ls -ld /media/parth-gupta/Steve/C-drive-files/namaste-react/dist
+   90  cd namaste-react/
+   91  npm start
+   92  npm start --no-cache
+   93  npm start
+   94  npm start --verbose
+   95  npm install parcel@latest
+   96  rm -rf node_modules/
+   97  rm -rf .parcel-cache/
+   98  rm -rf dist/
+   99  npm i
+  100  npm start
+  101  npm i -D parcel
+  102  npm i 
+  103  sudo add-apt-repository ppa:mozillacorp/mozillavpn
+  104  sudo apt-get update
+  105  npm start
+  106  sudo dpkg -i google-chrome-stable_current_amd64.deb 
+  107  /home/parth-gupta/Downloads/google-chrome-stable_current_amd64(2).deb
+  108  sudo apt-get purge google-chrome-stable
+  109  sudo dpkg -i google-chrome-stable_current_amd64.deb 
+  110  cd..
+  111  cd ..
+  112  ls
+  113  cd Downloads/
+  114  ls
+  115  cd master/
+  116  ls
+  117  cd beef-master/
+  118  ls
+  119  sudo ./beef 
+  120  clear
+  121  cd ..
+  122  sudo apt-get purge google-chrome-stable
+  123  ls
+  124  cd Downloads/
+  125  ls
+  126  sudo dpkg -i google-chrome-stable_current_amd64(2).deb
+  127  sudo apt update
+  128  apt list --upgradable
+  129  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E88979FB9B30ACF2
+  130  sudo gpg --keyserver hkp://pool.sks-keyservers.net:80 --recv-keys E88979FB9B30ACF2
+  131  NPM START
+  132  npm start
+  133  sudo apt-get purge google-chrome-stable 
+  134  cd Downloads/
+  135  ls
+  136  sudo dpkg -i google-chrome-stable_127.0.6533.119-1_amd64.deb 
+  137  fsck /dev/nvme0n1p4
+  138  lsblk -f
+  139  sudo fsck /dev/nvme0n1p4
+  140  sudo apt install exfat-fuse
+  141  sudo apt install ntfs-3g
+  142  sudo apt list --installed | grep ntfs
+  143  sudo apt install ntfs-3g
+  144  reboot
+  145  sudo apt-get install ntfs-3g
+  146  sudo ntfsfix /dev/nvme0n1p1
+  147  node "/home/parth-gupta/Documents/React/project-restaurant/src/components/tempCodeRunnerFile.js"
+  148  node "/home/parth-gupta/Documents/React/project-restaurant/src/components/RestaurantMenu.js"
+  149  npm start
+  150  npm install -D tailwindcss postcss
+  151  npx tailwindcss init
+  152  ping www.google.com
+  153  wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.4_all.deb
+  154  npm start
+  155  npm i react-redux
+  156  npm i @reduxjs/toolkit
+  157  npm start
+  158  cd "/home/parth-gupta/Documents/React/project-restaurant/" && gcc anisha.c -o anisha && "/home/parth-gupta/Documents/React/project-restaurant/"anisha
+  159  npm start
+  160  npm i yarn --global
+  161  sudo su
+  162  node "/home/parth-gupta/Documents/React/project-restaurant/testingImmer.js"
+  163  cd ..
+  164  npm start
+  165  npm run test:immer
+  166  npm install --save-dev @babel/node
+  167  npm run test:immer
+  168  npm run test:immer --verbose
+  169  Anode "/home/parth-gupta/Documents/React/project-restaurant/testingImmer.mjs"
+  170  npm run test:immer --verbose
+  171  npm test:immer
+  172  npm run test:immer
+  173  npx run test:immer
+  174  npm start
+  175  sudo su
+  176  ls
+  177  cd Downloads/
+  178  ls
+  179  chmod +x xampp-linux-x64-8.0.30-0-installer.run
+  180  sudo ./xampp-linux-x64-8.0.30-0-installer.run
+  181  sudo su
+  182  shutdown
+  183  shutdown -c
+  184  sudo snap install sqlmap
+  185  ping www.google.com
+  186  sudo dpkg -i mongodb-mongosh_2.3.0_amd64.deb 
+  187  sudo apt install ./mongodb-mongosh_2.3.0_amd64.deb 
+  188  mongosh
+  189  sudo service mongod status
+  190  mongo --version
+  191  mongod --version
+  192  sudo apt install mongodb
+  193  sudo dpkg -i mongodb-mongosh_2.3.0_amd64.deb
+  194  sudo apt install ./mongodb-mongosh_2.3.0_amd64.deb 
+  195  cd ..
+  196  sudo su
+  197  cd Downloads/
+  198  sudo dpkg -i mongodb-compass_1.43.6_amd64.deb 
+  199  sudo apt install ./mongodb-compass_1.43.6_amd64.deb 
+  200  cd ..
+  201  sudo apt install mongodb
+  202  sudo apt-get install gnupg curl
+  203  echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+  204  sudo apt-get update
+  205  sudo apt-get install -y mongodb-org
+  206  sudo systemctl start mongod
+  207  sudo systemctl daemon-reload
+  208  sudo systemctl status mongod
+  209  echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+  210  echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+  211  sudo apt-get update
+  212  sudo apt-get install -y mongodb-org
+  213  sudo su
+  214  cd Downloads/
+  215  sudo su
+  216  cd Downloads/
+  217  ls
+  218  pwd
+  219  cd `
+  220  cd
+  221  cd ..
+  222  2 +3 
+  223  pwd
+  224  cd `
+  225  
+  226  cd ~
+  227  cd Downloads/
+  228  cd ~
+  229  cd Downloads/
+  230  ls
+  231  less _Introduction\ of\ Comp\ Fundamentals_Anisha.pdf 
+  232  ls
+  233  cd Sem-5/
+  234  cd ~
+  235  ls 
+  236  npm start
+  237  sudo su
+  238  cd "/home/parth-gupta/Desktop/DSA/01_basics/classes/" && g++ fresh.cpp -o fresh && "/home/parth-gupta/Desktop/DSA/01_basics/classes/"fresh
+  239  npm i
+  240  npm start
+  241  cd "/home/parth-gupta/Desktop/DSA/Array_ADT/01_basics/" && gcc 1.c -o 1 && "/home/parth-gupta/Desktop/DSA/Array_ADT/01_basics/"1
+  242  cd "/home/parth-gupta/Desktop/DSA/Array_ADT/01_basics/" && gcc insert.c -o insert && "/home/parth-gupta/Desktop/DSA/Array_ADT/01_basics/"insert
+  243  d "/home/parth-gupta/Desktop/DSA/Array_ADT/01_basics/" && gcc insert.c -o insert && "/home/parth-gupta/Desktop/DSA/Array_ADT/01_basics/"insert
+  244  cd "/home/parth-gupta/Desktop/DSA/Array_ADT/01_basics/" && gcc insert.c -o insert && "/home/parth-gupta/Desktop/DSA/Array_ADT/01_basics/"insert
+  245  npm i
+  246  npm start
+  247  npm i -D parcel
+  248  npm config set strict-ssl false
+  249  npm i -D parcel
+  250  npm start
+  251  lsblk
+  252  sudo umount /mnt/nvme0n1p4
+  253  sudo mount -o remount,rw /dev/nvme0n1p4 /mnt/nvme0n1p4
+  254  sudo mount | grep nvme0n1p4
+  255  sudo umount /mnt/nvme0n1p3 
+  256  lsblk
+  257  gnome-disks
+  258  sudo mount -o remount,rw /dev/nvme0n1p4 /mnt/nvme0n1p4
+  259  sudo mount | grep nvme0n1p4
+  260  sudo blkid | grep nvme0n1p4
+  261  gnome-disks
+  262  sudo mount -t ntfs-3g /dev/nvme0n1p4 /mnt/nvme0n1p4
+  263  genome-disks
+  264  gnome-disks
+  265  sudo mount -t ntfs-3g /dev/nvme0n1p4 /mnt/nvme0n1p4
+  266  gnome-disks
+  267  sudo mount -t ntfs-3g /dev/nvme0n1p4 /mnt/nvme0n1p4
+  268  gnome-disks
+  269  npm i
+  270  npm start
+  271  npm i
+  272  npm i -D parcel
+  273  npm config set strict-ssl false
+  274  npm i -D parcel
+  275  code .
+  276  npm start
+  277  node "/home/parth-gupta/Desktop/Context-Application_Blogs/src/components/Header.js"
+  278  git -v
+  279  (type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y))   && sudo mkdir -p -m 755 /etc/apt/keyrings       && wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null       && sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg      && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null  && sudo apt update      && sudo apt install gh -y
+  280  gh --version
+  281  sudo apt update
+  282  sudo apt install gh
+  283  gh --version
+  284  npm start
+  285  npm install -D tailwindcss postcss
+  286  npx tailwindcss init
+  287  npm start
+  288  git status
+  289  git add .
+  290  git status 
+  291  git show remote upstream
+  292  git show remote --upstream
+  293  git remote -v
+  294  git remote show origin
+  295  git branch
+  296  git status
+  297  git add .
+  298  git status
+  299  git branch -m "main" "master"
+  300  git status
+  301  git branch -m "master" "main"
+  302  gh --version
+  303  gh repo ContextAPI-MiniProject --description "A Small Blog Website which fetches the blogs based on current page from an API and stores the data in a Context" --public
+  304  gh repo create ContextAPI-MiniProject --description "A Small Blog Website which fetches the blogs based on current page from an API and stores the data in a Context" --public
+  305  gh auth login
+  306  gh repo create ContextAPI-MiniProject --description "A Small Blog Website which fetches the blogs based on current page from an API and stores the data in a Context" --public
+  307  git repo view --josn
+  308  git repo view --json
+  309  git repo view --json | jq '.html_url'
+  310  git remote -v
+  311  git remote add origin https://github.com/parthgupta49/ContextAPI-MiniProject.git
+  312  git remote -v
+  313  git push origin main
+  314  git push -u origin main
+  315  git branch
+  316  git checkout main
+  317  ls
+  318  git status
+  319  git push origin HEAD::main
+  320  git show-ref
+  321  git branch main
+  322  git status 
+  323  git commit -m "project added"
+  324  git config user.email "nbparthgupta4959@gmail.com"
+  325  git config user.name "Parth Gupta"
+  326  git commit -m "project added"
+  327  git push -u origin main
+  328  cd ..
+  329  npm start
+  330  git status
+  331  git add .
+  332  git status
+  333  git commit -m "portfolio files added"
+  334  git config --global user.email "nbparthgupta4959@gmail.com"
+  335  git config --global user.name "Parth Gupta"
+  336  git commit -m "portfolio files added"
+  337  git status
+  338  gh repo create "CollegePlacementWebsite" "A portfolio website for college Placements."
+  339  gh repo create "CollegePlacementWebsite" --description "A portfolio website for college Placements." --public
+  340  git remote add origin "https://github.com/parthgupta49/CollegePlacementWebsite.git"
+  341  git remote -v
+  342  git push -u origin main
+  343  npm start
+  344  node "/home/parth-gupta/Documents/React/project-restaurant/src/components/__tests__/sum.test.js"
+  345  node "/home/parth-gupta/Documents/React/project-restaurant/src/components/__tests__/Search.test.js"
+  346  cd ..
+  347  cd..
+  348  cd ..
+  349  npm start
+  350  sudo npm start
+  351  npm i
+  352  sudo npm start
+  353  npx parcel --verbose index.html
+  354  npm install parcel@latest
+  355  npm start
+  356  sudo npm start
+  357  npm i -D @testing-library/react
+  358  npm i -D jest
+  359  npm install --save-dev babel-jest @babel/core @babel/preset-env
+  360  npm run test
+  361  npx jest --init
+  362  npm install --save-dev jest-environment-jsdom
+  363  npm run test 
+  364  npm run test
+  365  npm run watch-test
+  366  npm run test
+  367  npm run watch-test
+  368  npm run test
+  369  npm start
+  370  sudo npm start
+  371  npm i @babel/preset-react
+  372  Install @testing-library/jest-dom
+  373  npm i @testing-library/jest-dom
+  374  npm start
+  375  sudo npm start
+  376  npm start
+  377  sudo npm start
+  378  npx create-react-app netflix-gpt
+  379  npm start
+  380  ls
+  381  cd netflix-gpt/
+  382  code .
+  383  npm start
+  384  cd ..
+  385  npm install -D tailwindcss
+  386  npx tailwindcss init
+  387  npm start
+  388  npm i -D react-router-dom
+  389  npm start
+  390  node "/home/parth-gupta/Desktop/NetFlixGPT/netflix-gpt/src/components/Login.js"
+  391  npm start
+  392  gnome-system-monitor
+  393  gnome-shell
+  394  npm i firebase
+  395  npm install -g firebase-tools
+  396  sudo npm i -g firebase-tools
+  397  firebase login
+  398  firebase init
+  399  npm run build
+  400  firebase deploy
+  401  npm start
+  402  npm install @reduxjs/toolkit react-redux
+  403  cd "/home/parth-gupta/Desktop/DSA/Array_ADT/01_basics/" && gcc insert.c -o insert && "/home/parth-gupta/Desktop/DSA/Array_ADT/01_basics/"insert
+  404  code .
+  405  wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.4_all.deb
+  406  sudo dpkg -i ./protonvpn-stable-release_1.0.4_all.deb && sudo apt update
+  407  sudo apt install proton-vpn-gnome-desktop
+  408  sudo apt install libayatana-appindicator3-1 gir1.2-ayatanaappindicator3-0.1 gnome-shell-extension-appindicator
+  409  npm start
+  410  sudo npm start
+  411  npm start
+  412  npm start
+  413  sudo su
+  414  npm start
+  415  node "/home/parth-gupta/Desktop/PORTFOLIO/tailwind.config.js"
+  416  npm start
+  417  sudo npm start
+  418  npm i
+  419  npm install react@16.14.0 react-dom@16.14.0
+  420  npm i
+  421  npm start
+  422  npm i react && react-dom
+  423  npm i react-dom
+  424  npm start
+  425  npm install react-scripts@latest
+  426  npm i
+  427  npm start
+  428  npm i react-icons
+  429  npm i react-type-animation
+  430  npm start
+  431  npm i grapheme-splitter
+  432  npm start
+  433  code .
+  434  npm start
+  435  code .
+  436  npm i react-icons
+  437  npm star
+  438  npm start
+  439  npm i
+  440  npm start
+  441  sudo npm i
+  442  npm i react-responsive
+  443  npm start
+  444  npm i
+  445  npm start
+  446  export NODE_OPTIONS=--openssl-legacy-provider
+  447  npm start
+  448  echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p]
+  449  echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+  450  npm i
+  451  npm start
+  452  node "/home/parth-gupta/Desktop/PORTFOLIO/src/pages/CodeBlocks.js"
+  453  npm i @uidotdev/usehooks~
+  454  npm i @uidotdev/usehooks~
+  455  npm install @uidotdev/usehooks@latest
+  456  npm start
+  457  git -version
+  458  git -v
+  459  git clone https://github.com/parthgupta49/MyPortFolio.git
+  460  git status
+  461  git show origin main
+  462  git show origin upstream
+  463  git remote -v
+  464  git status
+  465  git add .
+  466  git commit -m "portfolio v1"
+  467  git status
+  468  git push origin main
+  469  ./mongod
+  470  dpkg -l | grep mongo
+  471  sudo apt-get install mongodb-server
+  472  sudo apt-get install mongodb
+  473  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+  474  sudo add-apt-repository 'deb [arch=amd64] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse'
+  475  sudo apt-get update
+  476  sudo apt-get install mongodb-org
+  477  sudo apt-get update --fix-missing
+  478  Acquire::https::Verify-Peer "false";
+  479  sudo nano /etc/apt/apt.conf.d/99disable-https-verify
+  480  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+  481  sudo add-apt-repository 'deb [arch=amd64] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse'
+  482  sudo apt-get update
+  483  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 656408E390CFB1F5
+  484  gpg --keyserver keyserver.ubuntu.com --recv-keys 656408E390CFB1F5
+  485  sudo gpg --export 656408E390CFB1F5 > /etc/apt/trusted.gpg.d/ubuntu.gpg
+  486  sudo sudo gpg --export 656408E390CFB1F5 > /etc/apt/trusted.gpg.d/ubuntu.gpg
+  487  curl -fsSL https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+  488  sudo apt-get install -y gnupg curl
+  489  curl -fsSL https://pgp.mongodb.com/server-7.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
+  490  openssl s_client -showcerts -connect example.com:443 < /dev/null 2>/dev/null | openssl x509 -outform PEM
+  491  curl -fsSL https://pgp.mongodb.com/server-7.0.asc --no-check-certificate| sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor 
+  492  curl -fsSL -k https://pgp.mongodb.com/server-7.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
+  493  echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+  494  sudo apt-get install -y mongodb-org
+  495  sudo apt-get update
+  496  sudo apt-get install -y mongodb-org
+  497  sudo systemctl start mongod
+  498  sudo systemctl status mongod
+  499  sudo systemctl enable mongod
+  500  sudo systemctl status mongod
+  501  mongosh
+  502  mongosh
+  503  mongod
+  504  gnome-disks
+  505  parth-gupta@parth-gupta-Aspire-A715-42G:/usr/bin$ dpkg -l | grep mongo
+  506  ii  mongodb-compass                                         1.43.6                                    amd64        The MongoDB GUI
+  507  ii  mongodb-mongosh                                         2.3.0                                     amd64        MongoDB Shell CLI REPL Package
+  508  ii  mongodb-mongosh
+  509  dpkg -l | grep mongo
+  510  npx create-react-app my-youtube
+  511  cd my-youtube/
+  512  npm start
+  513  npm i -D tailwindcss
+  514  npx tailwindcss init
+  515  npm start
+  516  npm i react-icons
+  517  npm start
+  518  node "/home/parth-gupta/Documents/React/project-restaurant/practice-js/practice1.js"
+  519  npm start
+  520  sudo npm start
+  521  npm start
+  522  sudo npm start
+  523  npm start
+  524  sudo npm start
+  525  code .
+  526  npm start
+  527  npm i
+  528  npm start
+  529  sudo npm start
+  530  sudo -E npm start
+  531  sudo chown -R root:root node_modules
+  532  sudo -E npm start
+  533  strace npm start
+  534  npm i
+  535  sudo npm star
+  536  sudo npm start
+  537  npm start
+  538  sudo npm start
+  539  sudo ls -l node_modules/.bin/vite
+  540  sudo npm start
+  541  sudo chmod +x node_modules/.bin/vite
+  542  sudo npm start
+  543  npm i
+  544  sudo npm start
+  545  cd backend/project-learn/
+  546  npm start
+  547  sudo npm start
+  548  sudo ls -l node_modules/.bin/nodemon
+  549  sudo npm start
+  550  code .
+  551  npm dev
+  552  npm run dev
+  553  sudo npm run dev
+  554  sudo npm install -g concurrently
+  555  sudo npm run dev
+  556  cd server/
+  557  npm start
+  558  npm i
+  559  npm start
+  560  sudo npm start
+  561  sudo su
+  562  cd server
+  563  nodemon index.js
+  564  nodemon ./index.js 
+  565  node ./index.js 
+  566  npm uninstall bcrypt
+  567  npm install bcrypt
+  568  node ./index.js 
+  569  sudo 
+  570  sudo npm run dev
+  571  npm i
+  572  npm i --force
+  573  sudo npm run dev
+  574  ping www.google.com
+  575  traceroute www.google.com
+  576  sudo apt install traceroute
+  577  traceroute www.google.com
+  578  traceroute google.com
+  579  traceroute -6 google.com
+  580  traceroute -n google.com
+  581  mkdir ~/Desktop/parthguptadocs
+  582  ping www
+  583  ping www.google.com
+  584  dmidecode
+  585  sudo dmidecode -t 17
+  586  sudo dmidecode -t system | grep 'Product Name'
+  587  sudo lshw -short | grep -i system | grep -v 'processor'
+  588  sudo dmidecode -t memory | grep -E 'Speed|Configured Clock Speed'
+  589  sudo apt-get install curl
+  590  curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+  591  postman -v
+  592  postman login
+  593  npm i @reduxjs/toolkit
+  594  sudo npm i @reduxjs/toolkit
+  595  npm view react-html-parser versions 
+  596  npm uninstall react-html-parser --save
+  597  npm i @reduxjs/toolkit
+  598  npm i react-redux
+  599  npm i react-hot-toast
+  600  npm i axios
+  601  npm run dev
+  602  sudo npm run dev
+  603  cd /home/parth-gupta/Desktop/Mega-FullStack
+  604  git init
+  605  git sta
+  606  git status 
+  607  git add . 
+  608  git commit -m "backend done frontend partial"
+  609  git remote -v
+  610  git remote add origin https://github.com/parthgupta49/ed-tech.git
+  611  git branch -M main
+  612  git push -u origin main
+  613  sudo npm run dev
+  614  sudo npm run de
+  615  sudo npm run dev
+  616  cls
+  617  clear
+  618  mongosh
+  619  sudo npm run dec
+  620  sudo npm run dev
+  621  node "/home/parth-gupta/Desktop/Mega-FullStack/src/components/core/Auth/ProfileDropDown.js"
+  622  systemd-resolve --status
+  623  systemd-creds --status
+  624  resolvectl
+  625  sudo npm run dev
+  626  mongosh
+  627  sudo systemctl status mongodb
+  628  sudo service mongodb status
+  629  sudo systemctl start mongodb
+  630  sudo systemctl list-units --type=service
+  631  sudo systemctl status mongod -l
+  632  sudo systemctl restart mongod
+  633  sudo systemctl status mongod -l
+  634  code .
+  635  ls
+  636  code .
+  637  sudo npm start
+  638  sudo su
+  639  npm start
+  640  mongosh
+  641  sudo systemctl restart mongodb
+  642  sudo systemctl list-units --type=service
+  643  sudo systemctl restart nvidia-persistenced
+  644  sudo systemctl list-units --type=service
+  645  sudo journalctl -u mongod
+  646  sudo systemctl restart mongod
+  647  sudo systemctl list-units --type=service
+  648  npm run dec
+  649  npm run dev
+  650  sudo npm run dev
+  651  npm run dev
+  652  sudo npm run dev
+  653  printenv > "/tmp/tmp-83815WZ7sourf5p3U.txt"
+  654  mkdir music
+  655  code .
+  656  cd server/
+  657  sudo npm run server
+  658  npm i @ramonak/react-progress-bar
+  659  sudo npm run server
+  660  sudo npm start
+  661  npm i @ramonak/react-progress-bar
+  662  sudo npm start
+  663  sudo npm run server
+  664  ls
+  665  cd Downloads/
+  666  ls
+  667  cd archive/
+  668  ls
+  669  mongosh
+  670  mongoimport -db aircraftIncidents --collection incidents --type csv --file Aircraft_Incident_Dataset.csv --headerline
+  671  sudo npm start
+  672  npm i react-rating-stars-component
+  673  sudo npm run sever
+  674  sudo npm run server
+  675  sudo npm i copy-to-clipboard
+  676  sudo su
+  677  cd server
+  678  sudo su
+  679  npm run server
+  680  npm start
+  681  sudo su
+  682  node "/home/parth-gupta/Desktop/Task Management Application/server/index.js"
+  683  cd ..
+  684  npm start
+  685  cd server
+  686  sudo su
+  687  lsof -i :4000
+  688  lsof -i :21
+  689  printenv > "/tmp/tmp-34934MaENw3vz7QUJ.txt"
+  690  npx create-react-app task-management-frontend
+  691  npm start
+  692  npm install -D tailwindcss
+  693  npx tailwindcss init
+  694  npm start
+  695  cd serveer
+  696  cd server/
+  697  npm star
+  698  npm start
+  699  sudo su
+  700  sudo npm start
+  701  npm run start
+  702  npm i react-icons
+  703  npm i react-router-dom
+  704  npm i react-redux
+  705  npm i @reduxjs/toolkit
+  706  npm i axios concurrently react-hook-form react-otp-input react-hot-toast
+  707  cd server
+  708  sudo su
+  709  cd server
+  710  sudo su
+  711  git status
+  712  git branch -M main
+  713  git status
+  714  git remote show origin
+  715  git remote add origin https://github.com/parthgupta49/netflix-gpt.git
+  716  git add .
+  717  git commit -m "netflix-gpt files added"
+  718  git status
+  719  git push -u origin main
+  720  cd server
+  721  sudo su
+  722  cd server
+  723  sudo su
+  724  cd server
+  725  npm run server
+  726  sudo su
+  727  sudo su
+  728  npm start
+  729  sudo su
+  730  git status
+  731  git init
+  732  git branch -M main 
+  733  git status
+  734  git add .
+  735  git status
+  736  git add .
+  737  git status
+  738  git add .
+  739  git reset
+  740  git status
+  741  git add .
+  742  git status
+  743  git reset
+  744  git status
+  745  git add .
+  746  git commit -m "initial commit"
+  747  git remote add https://github.com/parthgupta49/Task-Manager-Application
+  748  git remote add "https://github.com/parthgupta49/Task-Manager-Application"
+  749  git remote add origin https://github.com/parthgupta49/Task-Manager-Application
+  750  git remote -v
+  751  git push -u
+  752  git push -u main
+  753  git push -u origin
+  754  git push
+  755  git reset
+  756  git status
+  757  git remote add origin https://github.com/parthgupta49/Task-Manager-Application.git
+  758  git init
+  759  git add .
+  760  git commit -m "Initial Commit"
+  761  git remote add origin https://github.com/parthgupta49/Task-Manager-Application.git
+  762  git branch -M main
+  763  git push -u origin main
+  764  npm start
+  765  git status
+  766  git push -u main
+  767  git remote -v
+  768  git push -u origin
+  769  git pull origin 
+  770  git status
+  771  git pull
+  772  git config pull.ff only
+  773  git status
+  774  git pull
+  775  git merge --no-ff
+  776  node "/home/parth-gupta/Desktop/Task Management Application/src/components/core/dashboard/tasks/MenuButtons.js"
+  777  sudo su
+  778  code .
+  779  npm i
+  780  npm start
+  781  sudo su
+  782  sudo su
+  783  cd server
+  784  sudo su
+  785  sudo npm run server
+  786  sudo su
+  787  npm start
+  788  cd server
+  789  npm run server
+  790  npm run start
+  791  sudo su
+  792  npm run server
+  793  npm i react-type-animation
+  794  sudo su
+  795  npm run start
+  796  sudo su
+  797  npm run server
+  798  npm start
+  799  sudo su
+  800  ls
+  801  cd server
+  802  sudo su
+  803  code .
+  804  cd assignment_app/
+  805  npm i react-icons
+  806  npm start
+  807  sudo su
+  808  cd assignment_app/
+  809  npm install @fontsource/source-sans-pro
+  810  npm install bootstrap
+  811  cd assignment_app/
+  812  npm run start
+  813  cd assignment_app/
+  814  cd server/
+  815  sudo su
+  816  cd assignment_app/
+  817  npm run start
+  818  npm run build
+  819  npm start
+  820  npm i react-router-dom
+  821  cd assignment_app/
+  822  npm i react-router-dom
+  823  npm install @reduxjs/toolkit @testing-library/jest-dom @testing-library/react @testing-library/user-event axios concurrently react react-dom react-hook-form react-hot-toast react-icons react-otp-input react-redux
+  824  git status
+  825  git branch -M main
+  826  git status
+  827  git remote add origin https://github.com/parthgupta49/AssignmentApp.git
+  828  git push -u origin main
+  829  ping www.google.com
+  830  traceroute www.google.com
+  831  ************
+  832  npm run dev
+  833  sudo su
+  834  npx create-react-app aceternityUIDemo
+  835  npx create-react-app aceternity-ui-demo
+  836  cd aceternity-ui-demo/
+  837  sudo su
+  838  cd aceternity-ui-demo/
+  839  npm i react-router-dom
+  840  sudo su
+  841  sudo su
+  842  cd assignment_app/
+  843  npm start
+  844  sudo su
+  845  cd assignment_app/
+  846  npm i react-type-animation
+  847  sudo su
+  848  git remote -v
+  849  git remote get-url origin
+  850  cd "/home/parth-gupta/Desktop/DSA/01_basics/arrays/" && g++ 1.cpp -o 1 && "/home/parth-gupta/Desktop/DSA/01_basics/arrays/"1
+  851  cd "/home/parth-gupta/Desktop/DSA/01_basics/structure/" && gcc 1.c -o 1 && "/home/parth-gupta/Desktop/DSA/01_basics/structure/"1
+  852  pip install requests
+  853  python -v
+  854  sudo su
+  855  python -u "/home/parth-gupta/Desktop/DSA/pythonScriptToCountNoOfLinesOnGithub.py"
+  856  python3 -u "/home/parth-gupta/Desktop/DSA/pythonScriptToCountNoOfLinesOnGithub.py"
+  857  git log --author="Your Name" --since="1 year ago" --pretty=tformat: --numstat
+  858  git clone https://github.com/parthgupta49/Password-Generator.git
+  859  sudo su
+  860  git status
+  861  git status
+  862  cod .
+  863  code .
+  864  git clone https://github.com/parthgupta49/MyPortFolio.git
+  865  sudo apt update && sudo apt install warp-terminal && warp_finish_update WJPmplV
+  866  sudo apt-get install x11-utils pulseaudio-utils libnotify-bin xdotool vlc
+  867  ls
+  868  git clone https://github.com/SecUpwN/Spotify-AdKiller.git
+  869  cd Spotify-AdKiller
+  870  ./install.sh
+  871  node -v
+  872  npm -v
+  873  node
+  874  touch app.js
+  875  ls
+  876  cat app.js 
+  877  node "/home/parth-gupta/Desktop/Namaste-Node/app.js"
+  878  snap install spotify
+  879  fdisk
+  880  fsck
+  881  sudo su
+  882  fdisk -l
+  883  sudo su
+  884  node "/home/parth-gupta/Desktop/Namaste-Node/app.js"
+  885  node "/home/parth-gupta/Desktop/Namaste-Node/app.mjs"
+  886  node "/home/parth-gupta/Desktop/Namaste-Node/app.js"
+  887  node "/home/parth-gupta/Desktop/Namaste-Node/app.mjs"
+  888  node "/home/parth-gupta/Desktop/Namaste-Node/app.js"
+  889  lsblk
+  890  sudo mount /dev/sda 
+  891  node "/home/parth-gupta/Desktop/Namaste-Node/app.cjs"
+  892  node "/home/parth-gupta/Desktop/Namaste-Node/tempCodeRunnerFile.cjs"
+  893  node "/home/parth-gupta/Desktop/Namaste-Node/app.cjs"
+  894  sudo su
+  895  ls
+  896  cd Downloads/
+  897  sudo su
+  898  cd Desktop/
+  899  ls
+  900  rm -rf BadaKaro.com Assignment
+  901  cd Desktop/
+  902  ls
+  903  rm -rf BadaKaro.com\ Assignment/assignment_app/
+  904  sudo rm -rf 'BadaKaro.com Assignment/assignment_app/'
+  905  rm -rf aceternityUICheck/
+  906  sudo rm -rf aceternityUICheck/
+  907  sudo su
+  908  node "/home/parth-gupta/Desktop/Namaste-Node/app.cjs"
+  909  node "/home/parth-gupta/Desktop/Mega-FullStack/server/controllers/Payments.js"
+  910  sudo su
+  911  cd server
+  912  cd ..
+  913  sudo su
+  914  code .
+  915  git status
+  916  git add .
+  917  git commit -m "first commit"
+  918  git init
+  919  git branch -m "main"
+  920  git status
+  921  git add .
+  922  git commit -m "added expanding cards project"
+  923  git remote -v
+  924  gh auth login
+  925  gh user
+  926  gh auth status
+  927  gh repo create javascript-fun-projects
+  928  gh repo create web-dev_projects --add-readme "fun small projects for learning" --public
+  929  gh repo create web-dev_projects --add-readme "fun small projects for learning"
+  930  git add .
+  931  git commit -m "added README file"
+  932  gh repo create web-dev_projects --public
+  933  git remote add origin git@github.com:parthgupta49/web-dev_projects
+  934  git remote -v
+  935  git push -u origin main
+  936  git status
+  937  git remote -v
+  938  git remove remote origin
+  939  git remote remote origin
+  940  git remote remove origin
+  941  git remote add origin https://github.com/parthgupta49/web-dev_projects.git
+  942  git push -u origin main
+  943  git status
+  944  git add . 
+  945  git commit -m "added understanding comments | modified style.css"
+  946  git push origin main
+  947  git remote -v
+  948  git pull
+  949  git add .
+  950  git commit -m "modified README"
+  951  git push -u origin main
+  952  git remote -v
+  953  git pull
+  954  sudo su
+  955  mkdir parth
+  956  mkdir new_project_report_generator
+  957  code .
+  958  cd new_project_report_generator/
+  959  code .
+  960  node -v
+  961  npx create-react-app project_report_generator
+  962  git status
+  963  git init
+  964  git branch -m main
+  965  git status
+  966  git add .
+  967  git commit -m "added react learners files"
+  968  git remote 
+  969  git remote add origin https://github.com/parthgupta49/React.git
+  970  git push -u origin main
